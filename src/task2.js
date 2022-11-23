@@ -9,7 +9,7 @@ export default function Task2() {
   };
 
   return (
-    <div>
+    <div className="squares">
       <button
         className="task2Button"
         onClick={toggleIt}

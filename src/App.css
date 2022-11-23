@@ -74,7 +74,9 @@ button {
   height: 200px;
   width: 200px;
 }
-
+.squares {
+  text-align: center;
+}
 
 @keyframes App-logo-spin {
   from {
