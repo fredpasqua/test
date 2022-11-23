@@ -3,9 +3,9 @@ import { useState } from "react";
 export default function Task1() {
   const [message, setMessage] = useState("");
 
-  const handleChange = (e) => {
-    setMessage(e.target.value);
-    console.log("value is:", e.target.value);
+  const handleChange = (event) => {
+    setMessage(event.target.value);
+    console.log("value is:", event.target.value);
   };
   const clear = (e) => {
     setMessage("");
