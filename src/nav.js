@@ -17,7 +17,9 @@ export default function Nav() {
           </li>
           <li>
             <a href="/Task3">
-              <button>Task3</button>
+              <button>Task3
+                
+              </button>
             </a>
           </li>
         </ul>
