@@ -11,11 +11,16 @@ export default function Task2() {
   return (
     <div>
       <button
+        className="task2Button"
         onClick={toggleIt}
         style={{ backgroundColor: toggle ? "red" : "yellow" }}
-      >
-        Something
-      </button>
+      />
+
+      <button
+        className="task2Button"
+        onClick={toggleIt}
+        style={{ backgroundColor: toggle ? "yellow" : "red" }}
+      />
     </div>
   );
 }

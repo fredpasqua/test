@@ -69,6 +69,11 @@ button {
   border-radius: 5px;
 }
 
+.task2Button {
+  margin: 10px;
+  height: 200px;
+  width: 200px;
+}
 
 
 @keyframes App-logo-spin {
