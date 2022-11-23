@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="animate-character">Test Your React.js Skillz</h1>
-
+      <h2>test</h2>
       <BrowserRouter>
         <Nav />
         <Routes>
