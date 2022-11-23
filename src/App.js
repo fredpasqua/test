@@ -6,10 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./nav";
 function App() {
   return (
-    <>
-      <div className="App">
-        <h1 className="animate-character">Test Your React.js Skillz</h1>
-      </div>
+    <div className="App">
+      <h1 className="animate-character">Test Your React.js Skillz</h1>
+
       <BrowserRouter>
         <Nav />
         <Routes>
@@ -18,7 +17,7 @@ function App() {
           <Route path="/Task3" element={<Task3 />}></Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
