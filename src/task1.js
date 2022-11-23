@@ -20,9 +20,11 @@ export default function Task1() {
           onChange={handleChange}
           value={message}
         />
-        <textbox className="taskOneBox">{message}</textbox>
+        <div className="taskOneBox">{message}</div>
 
-        <button onClick={clear}>Clear</button>
+        <button className="clearButton" onClick={clear}>
+          Clear
+        </button>
       </div>
     </>
   );

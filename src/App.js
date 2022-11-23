@@ -1,6 +1,6 @@
 import "./App.css";
 import Task1 from "./task1.js";
-import Task2 from "./task2";
+import Task2 from "./task2.js";
 import Task3 from "./task3.js";
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         </ul>
       </nav>
       <Task1 />
-
+      <Task2 />
       <Task3 />
     </div>
   );
