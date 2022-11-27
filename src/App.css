@@ -25,6 +25,43 @@ align-items: center;
   margin: 20px;
   overflow: hidden;
 }
+.taskContainer {
+  display: flex;
+  justify-content: center;
+
+}
+.taskThreeBox {
+  display: flex;
+  
+  margin-top: 20px;
+  background-color: none; 
+  border: 1px solid black;
+  font-size: 24px;
+  height: fit-content;
+  width:fit-content;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.elementBox {
+  display: flex;
+  margin: 20px;
+  height: 100px;
+  width: 150px;
+  border: 1px black solid;
+  align-items: center;
+  justify-content: center;
+}
+.boxListItems{
+  display: flex;
+
+  justify-content:space-around;
+
+}
+.boxListItems li {
+ list-style-type: none;
+
+}
 
 .animate-character
 {
