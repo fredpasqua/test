@@ -2,12 +2,12 @@ import React from "react";
 import { useState } from "react";
 import DataBox from "./dataBox.jsx";
 export default function Task2() {
-  const [data, setData] = useState([
+  const data = [
     { title: "one", color: "blue" },
     { title: "two", color: "red" },
     { title: "three", color: "green" },
     { title: "four", color: "yellow" },
-  ]);
+  ];
 
   const [visisble, setVisibility] = useState("true");
 
