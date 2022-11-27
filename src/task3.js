@@ -9,8 +9,11 @@ export default function Task2() {
     { title: "four", color: "yellow" },
   ];
 
-  const [visisble, setVisibility] = useState("true");
-
+  const [visible, setVisibility] = useState(true);
+  let handleOnClick = () => {
+    setVisibility(!visible);
+    console.log(visible);
+  };
   return (
     <>
       <div className="taskContainer">
@@ -19,12 +22,23 @@ export default function Task2() {
             {data.map((data) => {
               return (
                 <li key={data.title} className="boxListItem">
-                  <DataBox title={data.title} bgColor={data.color} />
+                  <DataBox
+                    title={data.title}
+                    bgColor={data.color}
+                    visible={visible}
+                  />
                   {/* TO DO: Make box clickable and remove from view */}
                 </li>
               );
             })}
           </ul>
+          <button
+            onClick={() => {
+              handleOnClick();
+            }}
+          >
+            Reset
+          </button>
         </div>
       </div>
     </>
