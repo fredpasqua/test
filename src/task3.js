@@ -10,9 +10,11 @@ export default function Task2() {
   ];
 
   const [visible, setVisibility] = useState(true);
-  let handleOnClick = () => {
+  const handleOnClick = () => {
     setVisibility(!visible);
-    console.log(visible);
+  };
+  const handleOnClickShowAll = () => {
+    setVisibility(true);
   };
   return (
     <>
@@ -21,25 +23,28 @@ export default function Task2() {
           <ul className="boxListItems">
             {data.map((data) => {
               return (
-                <li key={data.title} className="boxListItem">
-                  <DataBox
-                    title={data.title}
-                    bgColor={data.color}
-                    visible={visible}
-                  />
+                <li
+                  key={data.title}
+                  className="boxListItem"
+                  style={{ display: visible ? "inline-block" : "none" }}
+                  onClick={() => {
+                    handleOnClick();
+                  }}
+                >
+                  <DataBox title={data.title} bgColor={data.color} />
                   {/* TO DO: Make box clickable and remove from view */}
                 </li>
               );
             })}
           </ul>
-          <button
-            onClick={() => {
-              handleOnClick();
-            }}
-          >
-            Reset
-          </button>
         </div>
+        <button
+          onClick={() => {
+            handleOnClickShowAll();
+          }}
+        >
+          Reset
+        </button>
       </div>
     </>
   );
