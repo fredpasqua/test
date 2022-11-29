@@ -1,29 +1,29 @@
 import DataBox from "./dataBox.jsx";
 import { useState } from "react";
 export default function Task2() {
-  const data = [
-    { title: "one", color: "blue", visible: true },
-    { title: "two", color: "red", visible: true },
-    { title: "three", color: "green", visible: true },
-    { title: "four", color: "yellow", visible: true },
+  let data = [
+    { title: "one", color: "blue" },
+    { title: "two", color: "red" },
+    { title: "three", color: "green" },
+    { title: "four", color: "yellow" },
   ];
-
-  const [info, setInfo] = useState(
-    data.map(
-      (data) =>
-        data.visible && (
-          <li key={data.title} className="boxListItem">
-            <DataBox title={data.title} bgColor={data.color} />
-          </li>
-        )
-    )
-  );
-
+  let handleClick = () => {
+   console.log("clicked");
+ };
   return (
     <>
       <div className="taskContainer">
         <div className="taskThreeBox">
-          <ul className="boxListItems">{info}</ul>
+          <ul className="boxListItems">
+            {data.map((data) => (
+              <DataBox
+                key={data.title}
+                title={data.title}
+                bgColor={data.color}
+                onClick={() => handleClick}
+              />
+            ))}
+          </ul>
         </div>
         <button>reset</button>
       </div>
