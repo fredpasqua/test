@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-export default function DataBox({ title, bgColor }) {
+export default function DataBox({ title, bgColor, display }) {
   const [visible, setVisibility] = useState(true);
   const handleOnClick = () => {
     setVisibility(!visible);
   };
+
   return (
     <div
       className="elementBox"

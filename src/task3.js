@@ -1,6 +1,5 @@
-import React from "react";
-import { useState } from "react";
 import DataBox from "./dataBox.jsx";
+import { useState } from "react";
 export default function Task2() {
   const data = [
     { title: "one", color: "blue" },
@@ -8,13 +7,9 @@ export default function Task2() {
     { title: "three", color: "green" },
     { title: "four", color: "yellow" },
   ];
-
-  const [visible, setVisibility] = useState(true);
-  const handleOnClick = () => {
-    setVisibility(!visible);
-  };
-  const handleOnClickShowAll = () => {
-    setVisibility(true);
+  const [displayState, setDisplayState] = useState("null");
+  let handleRefresh = () => {
+    // Need Logic to reset visibility
   };
   return (
     <>
@@ -23,28 +18,19 @@ export default function Task2() {
           <ul className="boxListItems">
             {data.map((data) => {
               return (
-                <li
-                  key={data.title}
-                  className="boxListItem"
-                  style={{ display: visible ? "inline-block" : "none" }}
-                  onClick={() => {
-                    handleOnClick();
-                  }}
-                >
-                  <DataBox title={data.title} bgColor={data.color} />
+                <li key={data.title} className="boxListItem">
+                  <DataBox
+                    display={displayState}
+                    title={data.title}
+                    bgColor={data.color}
+                  />
                   {/* TO DO: Make box clickable and remove from view */}
                 </li>
               );
             })}
           </ul>
         </div>
-        <button
-          onClick={() => {
-            handleOnClickShowAll();
-          }}
-        >
-          Reset
-        </button>
+        <button onClick={handleRefresh}>reset</button>
       </div>
     </>
   );
