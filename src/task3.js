@@ -2,35 +2,29 @@ import DataBox from "./dataBox.jsx";
 import { useState } from "react";
 export default function Task2() {
   const data = [
-    { title: "one", color: "blue" },
-    { title: "two", color: "red" },
-    { title: "three", color: "green" },
-    { title: "four", color: "yellow" },
+    { title: "one", color: "blue", visible: true },
+    { title: "two", color: "red", visible: true },
+    { title: "three", color: "green", visible: true },
+    { title: "four", color: "yellow", visible: true },
   ];
-  const [displayState, setDisplayState] = useState("null");
-  let handleRefresh = () => {
-    // Need Logic to reset visibility
-  };
+
+  const [info, setInfo] = useState(
+    data.map((data) =>
+      data.visible ? (
+        <li key={data.title} className="boxListItem">
+          <DataBox title={data.title} bgColor={data.color} />
+        </li>
+      ) : null
+    )
+  );
+
   return (
     <>
       <div className="taskContainer">
         <div className="taskThreeBox">
-          <ul className="boxListItems">
-            {data.map((data) => {
-              return (
-                <li key={data.title} className="boxListItem">
-                  <DataBox
-                    display={displayState}
-                    title={data.title}
-                    bgColor={data.color}
-                  />
-                  {/* TO DO: Make box clickable and remove from view */}
-                </li>
-              );
-            })}
-          </ul>
+          <ul className="boxListItems">{info}</ul>
         </div>
-        <button onClick={handleRefresh}>reset</button>
+        <button>reset</button>
       </div>
     </>
   );
