@@ -9,12 +9,13 @@ export default function Task2() {
   ];
 
   const [info, setInfo] = useState(
-    data.map((data) =>
-      data.visible ? (
-        <li key={data.title} className="boxListItem">
-          <DataBox title={data.title} bgColor={data.color} />
-        </li>
-      ) : null
+    data.map(
+      (data) =>
+        data.visible && (
+          <li key={data.title} className="boxListItem">
+            <DataBox title={data.title} bgColor={data.color} />
+          </li>
+        )
     )
   );
 
