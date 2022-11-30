@@ -1,12 +1,5 @@
-import React, { useState } from "react";
-
-export default function DataBox({ title, bgColor }) {
-  // const [visible, setVisibility] = useState(true);
-  // const handleOnClick = () => {
-  //   setVisibility(!visible);
-  // };
-
-  return (
+export default function DataBox({ title, bgColor, visibility }) {
+  return visibility ? (
     <div
       className="elementBox"
       style={{
@@ -15,5 +8,5 @@ export default function DataBox({ title, bgColor }) {
     >
       {title}
     </div>
-  );
+  ) : null;
 }
