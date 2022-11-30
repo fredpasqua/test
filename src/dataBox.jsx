@@ -1,4 +1,4 @@
-export default function DataBox({ title, bgColor, visibility }) {
+export default function DataBox({ title, bgColor, visibility, image }) {
   return visibility ? (
     <div
       className="elementBox"
@@ -6,7 +6,11 @@ export default function DataBox({ title, bgColor, visibility }) {
         backgroundColor: bgColor,
       }}
     >
-      {title.toUpperCase()}
+      {image ? (
+        <img className="task3Image" src={image} alt="mushroom" />
+      ) : (
+        title.toUpperCase()
+      )}
     </div>
   ) : null;
 }

@@ -6,15 +6,65 @@ export default function Task3() {
       title: "Blue",
       color: "blue",
       visible: true,
+      image:
+        "https://images.pexels.com/photos/1249884/pexels-photo-1249884.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
-    { title: "Red", color: "red", visible: true },
-    { title: "Green", color: "green", visible: true },
-    { title: "Yellow", color: "yellow", visible: true },
-    { title: "Orange", color: "orange", visible: true },
-    { title: "Purple", color: "purple", visible: true },
-    { title: "Grey", color: "grey", visible: true },
-    { title: "Aqua", color: "aqua", visible: true },
-    { title: "pink", color: "pink", visible: true },
+    {
+      title: "Red",
+      color: "red",
+      visible: true,
+      image:
+        "https://images.pexels.com/photos/36438/mushrooms-brown-mushrooms-cook-eat.jpg?auto=compress&cs=tinysrgb&w=400",
+    },
+    {
+      title: "Green",
+      color: "green",
+      visible: true,
+      image:
+        "https://images.pexels.com/photos/793267/pexels-photo-793267.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      title: "Yellow",
+      color: "yellow",
+      visible: true,
+      image:
+        "https://images.pexels.com/photos/361186/forest-mushrooms-nature-autumn-361186.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      title: "Orange",
+      color: "orange",
+      visible: true,
+      image:
+        "https://images.pexels.com/photos/53494/mushroom-fungi-fungus-many-53494.jpeg?auto=compress&cs=tinysrgb&w=400",
+    },
+    {
+      title: "Purple",
+      color: "purple",
+      visible: true,
+      image:
+        "https://images.pexels.com/photos/51391/matryoshka-amanita-muscaria-mushroom-hat-51391.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      title: "Grey",
+      color: "grey",
+      visible: true,
+      image:
+        "https://images.pexels.com/photos/68732/mushrooms-mushroom-back-light-grey-68732.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      title: "Aqua",
+      color: "aqua",
+      visible: true,
+      image:
+        "https://images.pexels.com/photos/129467/pexels-photo-129467.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      title: "pink",
+      color: "pink",
+      visible: true,
+      image:
+        "https://images.pexels.com/photos/675258/pexels-photo-675258.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
   ];
 
   const [items, setItems] = useState(data);
@@ -33,6 +83,7 @@ export default function Task3() {
   return (
     <>
       <div className="taskContainer">
+        <h1>Click to Remove Items</h1>
         <div className="taskThreeBox">
           <ul className="boxListItems">
             {items.map((e) => (
@@ -45,6 +96,7 @@ export default function Task3() {
                   title={e.title}
                   bgColor={e.color}
                   visibility={e.visible}
+                  image={e.image}
                 />
                 {/* TO DO: Make box clickable and remove from view */}
               </li>

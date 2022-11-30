@@ -35,15 +35,12 @@ align-items: center;
 }
 .taskThreeBox {
   display: flex;
-
   margin-top: 20px;
   background-color: none; 
-  border: 1px solid black;
   font-size: 24px;
   height: fit-content;
   width:fit-content;
   margin: 20px;
- 
 }
 
 .elementBox {
@@ -65,6 +62,11 @@ align-items: center;
 .boxListItems li {
  list-style-type: none;
 
+}
+
+.task3Image {
+  height: 100px;
+  width: 150px;
 }
 
 .taskContainer {
