@@ -1,4 +1,4 @@
-export default function UserBox({ name }) {
+export default function UserBox({ name, image, title }) {
   return (
     <div className="infoCard">
       <div
@@ -7,11 +7,11 @@ export default function UserBox({ name }) {
         //   backgroundColor: bgColor,
         // }}
       >
-        {/* {image ? (
+        {image ? (
           <img className="task3Image" src={image} alt="mushroom" />
         ) : (
           title.toUpperCase()
-        )} */}
+        )}
       </div>
       <h2 className="task3text">{name}</h2>
     </div>
