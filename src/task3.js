@@ -1,11 +1,11 @@
 import DataBox from "./dataBox.jsx";
 import { useState } from "react";
 export default function Task3() {
-  let data = [
-    { title: "one", color: "blue", visible: true },
-    { title: "two", color: "red", visible: true },
-    { title: "three", color: "green", visible: true },
-    { title: "four", color: "yellow", visible: true },
+  const data = [
+    { title: "Blue", color: "blue", visible: true },
+    { title: "Red", color: "red", visible: true },
+    { title: "Green", color: "green", visible: true },
+    { title: "Yellow", color: "yellow", visible: true },
   ];
 
   const [items, setItems] = useState(data);
@@ -16,13 +16,10 @@ export default function Task3() {
         item.title === title ? { ...item, visible: false } : item
       )
     );
-    console.log(items);
   };
 
   let handleReset = () => {
-    setItems(
-      items.map((item) => (item.title ? { ...item, visible: true } : null))
-    );
+    setItems(items.map((item) => (item ? { ...item, visible: true } : null)));
   };
   return (
     <>
