@@ -96,6 +96,7 @@ export default function Task3() {
         item.title === title ? { ...item, visible: false } : item
       )
     );
+    console.log(data);
   };
 
   let handleReset = () => {
