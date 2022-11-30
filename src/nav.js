@@ -20,6 +20,11 @@ export default function Nav() {
               <button>Task3</button>
             </a>
           </li>
+          <li>
+            <a href="/Task4">
+              <button>Task4</button>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
