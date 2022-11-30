@@ -5,7 +5,7 @@ export default function Task1() {
 
   const handleChange = (event) => {
     setMessage(event.target.value);
-    console.log("value is:", event.target.value);
+    console.log("value is:", event.target.value.toUppercase());
   };
   const clear = (e) => {
     setMessage("");
@@ -20,7 +20,7 @@ export default function Task1() {
           onChange={handleChange}
           value={message}
         />
-        <div className="taskOneBox">{message}</div>
+        <div className="taskOneBox">{message.toUpperCase()}</div>
 
         <button className="clearButton" onClick={clear}>
           Clear

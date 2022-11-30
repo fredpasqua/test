@@ -2,7 +2,10 @@
   text-align: center;
 
 }
-
+.App {
+  background-color: #ff008421;
+  height: 100vh;
+}
 .navList  {
 list-style: none;
 display: flex;
@@ -32,7 +35,7 @@ align-items: center;
 }
 .taskThreeBox {
   display: flex;
-  
+
   margin-top: 20px;
   background-color: none; 
   border: 1px solid black;
@@ -40,7 +43,7 @@ align-items: center;
   height: fit-content;
   width:fit-content;
   margin: 20px;
-  overflow: hidden;
+ 
 }
 
 .elementBox {
@@ -51,10 +54,11 @@ align-items: center;
   border: 1px black solid;
   align-items: center;
   justify-content: center;
+  overflow: scroll;
 }
 .boxListItems{
   display: flex;
-
+  flex-wrap: wrap;
   justify-content:space-around;
 
 }
@@ -107,7 +111,7 @@ button {
   border:rgb(255, 192, 237)
 
 }
-li button:hover{
+button:hover{
   transition: 500ms;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
  

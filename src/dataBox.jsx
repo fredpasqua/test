@@ -6,7 +6,7 @@ export default function DataBox({ title, bgColor, visibility }) {
         backgroundColor: bgColor,
       }}
     >
-      {title}
+      {title.toUpperCase()}
     </div>
   ) : null;
 }
