@@ -2,8 +2,11 @@
   text-align: center;
 
 }
+html, body, body > div, .app {
+  height: 100%;
+}
 .App {
-  background-color: #ff008421;
+  background-color: #ffffff;
   height: 100vh;
 }
 .navList  {
@@ -46,33 +49,66 @@ align-items: center;
 .elementBox {
   display: flex;
   margin: 20px;
-  height: 100px;
+  height: 150px;
   width: 150px;
   border: 1px black solid;
   align-items: center;
   justify-content: center;
-  overflow: scroll;
+  overflow: hidden;
+  border-radius: 50%;
 }
 .boxListItems{
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-around;
+  justify-content: space-around;
+
 
 }
 .boxListItems li {
  list-style-type: none;
 
 }
-
 .task3Image {
-  height: 100px;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .5s ease-in-out;
+  height: 200px;
+  width: 200px;
+  margin-left: 30px;
+  
+}
+.task3Image:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+  transition: .5s ease-out;
+  transform: scale(1.4);
+  margin-left: 0px;
+}
+
+.task3text {
+  font-size: 15px;
   width: 150px;
+  
+}
+.infoCard {
+display: flex;
+background-color: #d13468;
+justify-content:space-around;
+margin: 10px;
+padding: 15px;
+border-radius: 2%; 
+}
+
+.infoCard h2 {
+  color: white;
 }
 
 .taskContainer {
   display: flex; 
   flex-direction: column;
   align-items: center;
+
 }
 
 

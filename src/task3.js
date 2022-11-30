@@ -1,9 +1,13 @@
 import DataBox from "./dataBox.jsx";
 import { useState } from "react";
 export default function Task3() {
+  const ipsum = {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  };
   const data = [
     {
       title: "Blue",
+      text: ipsum.text,
       color: "blue",
       visible: true,
       image:
@@ -11,6 +15,7 @@ export default function Task3() {
     },
     {
       title: "Red",
+      text: ipsum.text,
       color: "red",
       visible: true,
       image:
@@ -18,12 +23,14 @@ export default function Task3() {
     },
     {
       title: "Green",
+      text: ipsum.text,
       color: "green",
       visible: true,
       image:
         "https://images.pexels.com/photos/793267/pexels-photo-793267.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
+      text: ipsum.text,
       title: "Yellow",
       color: "yellow",
       visible: true,
@@ -31,6 +38,7 @@ export default function Task3() {
         "https://images.pexels.com/photos/361186/forest-mushrooms-nature-autumn-361186.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
+      text: ipsum.text,
       title: "Orange",
       color: "orange",
       visible: true,
@@ -38,6 +46,7 @@ export default function Task3() {
         "https://images.pexels.com/photos/53494/mushroom-fungi-fungus-many-53494.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     {
+      text: ipsum.text,
       title: "Purple",
       color: "purple",
       visible: true,
@@ -45,6 +54,7 @@ export default function Task3() {
         "https://images.pexels.com/photos/51391/matryoshka-amanita-muscaria-mushroom-hat-51391.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
+      text: ipsum.text,
       title: "Grey",
       color: "grey",
       visible: true,
@@ -52,6 +62,7 @@ export default function Task3() {
         "https://images.pexels.com/photos/68732/mushrooms-mushroom-back-light-grey-68732.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
+      text: ipsum.text,
       title: "Aqua",
       color: "aqua",
       visible: true,
@@ -59,6 +70,7 @@ export default function Task3() {
         "https://images.pexels.com/photos/129467/pexels-photo-129467.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
+      text: ipsum.text,
       title: "pink",
       color: "pink",
       visible: true,
@@ -89,7 +101,6 @@ export default function Task3() {
     return array;
   }
 
-
   let handleClick = (title) => {
     setItems(
       items.map((item) =>
@@ -119,6 +130,7 @@ export default function Task3() {
                   bgColor={e.color}
                   visibility={e.visible}
                   image={e.image}
+                  text={e.text}
                 />
                 {/* TO DO: Make box clickable and remove from view */}
               </li>
