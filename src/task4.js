@@ -14,14 +14,16 @@ export default function Task4() {
     <>
       <div>
         <div>
-          <ul>
+          <ul className="boxListItems">
             {users.map((user) => (
               <li key={user.id}>
                 <UserBox
-                  key={user.id}
                   name={user.firstName + " " + user.lastName}
                   image={user.image}
+                  streetAddress={user.address}
+                  manufDate={user.birthDate}
                   title={"placeholder"}
+                  email={user.email}
                 />
               </li>
             ))}
