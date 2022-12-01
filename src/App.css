@@ -110,7 +110,7 @@ width: fit-content;
 
 .infoCardUser {
   display: flex;
-background-color: #4634d1;
+background-color: #8f85d7;
 font-size: 12px;
 justify-content:space-around;
 margin: 20px;
@@ -127,19 +127,37 @@ width: fit-content;
   display: flex;
   flex-direction: column;
 }
+.profileBox h2 {
+  margin-top: -15px;
+  align-self: center;
+}
 
 .addressGroup {
-  display: flex;
+display: flex;
 line-height: 1rem;
 flex-direction: column;
-justify-content: space-around;
-flex-wrap: wrap;
-width: fit-content;
+flex-wrap:nowrap;
+height: 150px;
+margin-top: 20px;
+margin: 30px;
+
 }
 
 
+.addressGroup p  {
+margin-bottom: -5px;
+
+align-self: flex-start;
+color: rgb(211, 237, 226);
+}
+a:hover {
+color: white;
+}
+
 .addressHeading {
   color: white;
+  margin-bottom: -5px;
+  align-self: flex-start;
 
 }
 .taskContainer {

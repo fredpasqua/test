@@ -32,7 +32,11 @@ export default function UserBox({
         <p>
           {streetAddress.city}, {streetAddress.state} {streetAddress.postalCode}
         </p>
-        <h2 className="addressHeading">Email: {email}</h2>
+        <p>
+          <a href="mail to:" email>
+            {email}
+          </a>
+        </p>
       </div>
     </div>
   );
