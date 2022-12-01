@@ -4,24 +4,23 @@ import UserBox from "./userBox.jsx";
 export default function Task4() {
   const [users, setUsers] = useState([]);
   const apiGET = () => {
-    fetch("https://dummyjson.com/users/")
+    fetch("https://dummyjson.com/users")
       .then((res) => res.json())
-      .then((json) => setUsers(json));
+      .then((json) => setUsers(json.users));
   };
-  useEffect(() => {
-    apiGET();
-  });
+  useEffect(() => apiGET, []);
   console.log(users);
   return (
     <>
       <div>
         <div>
           <ul>
-            {users.map((e) => (
-              <li key={e.id}>
+            {users.map((user) => (
+              <li key={user.id}>
                 <UserBox
-                  name={e.firstName}
-                  image={e.image}
+                  key={user.id}
+                  name={user.firstName + " " + user.lastName}
+                  image={user.image}
                   title={"placeholder"}
                 />
               </li>
