@@ -5,6 +5,7 @@ export default function UserBox({
   image,
   title,
   email,
+
 }) {
   return (
     <div className="infoCardUser">

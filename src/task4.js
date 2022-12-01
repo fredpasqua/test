@@ -9,6 +9,7 @@ export default function Task4() {
       .then((json) => setUsers(json.users));
   };
   useEffect(() => apiGET, []);
+
   console.log(users);
   return (
     <>
