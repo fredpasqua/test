@@ -23,8 +23,9 @@ export default function Task4() {
   const searchIcon = <FontAwesomeIcon icon={faSearch} />;
   return (
     <>
-      <div>
+      <div className="directoryContainer">
         <h1>Robots Company Directory</h1>
+
         <div className="searchBar">
           {searchIcon}
           <input

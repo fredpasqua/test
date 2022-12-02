@@ -106,7 +106,10 @@ width: fit-content;
 .infoCard h2 {
   color: white;
 }
+.directoryContainer {
+  background-color: #e7e6e7;
 
+}
 .infoCardUser {
   display: flex;
 background-color: #8f85d7;
@@ -136,6 +139,9 @@ width: fit-content;
 .searchBar input  {
   font-size: 23px;
   
+}
+input:focus {
+  outline: none;
 }
 .profileBox {
   display: flex;
