@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import UserBox from "./userBox.jsx";
 export default function Task4() {
@@ -18,15 +20,19 @@ export default function Task4() {
       user.lastName.toLowerCase().includes(query.toLowerCase())
     );
   });
-
+  const searchIcon = <FontAwesomeIcon icon={faSearch} />;
   return (
     <>
       <div>
-        <input
-          onChange={(e) => setQuery(e.target.value)}
-          value={query}
-          placeholder="Search Names"
-        ></input>
+        <h1>Robots Company Directory</h1>
+        <div className="searchBar">
+          {searchIcon}
+          <input
+            onChange={(e) => setQuery(e.target.value)}
+            value={query}
+            placeholder="search"
+          ></input>
+        </div>
         <div>
           <ul className="boxListItems">
             {filteredUsers < 1 ? (

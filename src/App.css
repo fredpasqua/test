@@ -23,7 +23,7 @@ align-items: center;
 }
 .taskOneBox {
   margin-top: 20px;
-  background-color: none; 
+
   border: 1px solid black;
   font-size: 24px;
   height: 50px;
@@ -39,7 +39,6 @@ align-items: center;
 .taskThreeBox {
   display: flex;
   margin-top: 20px;
-  background-color: none; 
   font-size: 24px;
   height: fit-content;
   width:fit-content;
@@ -122,7 +121,22 @@ width: fit-content;
   color: rgb(211, 237, 226);
   font-size: 16px;
 }
-
+.searchBar {
+  background-color: rgb(215, 120, 199);
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px 5px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  border: purple 1px solid;
+}
+.searchBar input  {
+  font-size: 23px;
+  
+}
 .profileBox {
   display: flex;
   flex-direction: column;
@@ -196,7 +210,7 @@ color: white;
   }
 }
 button {
-  background-color: pink;
+  background-color: rgb(215, 120, 199);
   height: 80px;
   width: 80px;
   border-radius: 50%;
