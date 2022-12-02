@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function UserBox({
   manufDate,
   streetAddress,
@@ -5,8 +7,8 @@ export default function UserBox({
   image,
   title,
   email,
-
 }) {
+  let emailAddress = email.toString();
   return (
     <div className="infoCardUser">
       <div className="profileBox">
@@ -17,7 +19,7 @@ export default function UserBox({
           // }}
         >
           {image ? (
-            <img className="task3Image" src={image} alt="mushroom" />
+            <img className="task3Image" src={image} alt="robot face" />
           ) : (
             title.toUpperCase()
           )}
@@ -33,9 +35,7 @@ export default function UserBox({
           {streetAddress.city}, {streetAddress.state} {streetAddress.postalCode}
         </p>
         <p>
-          <a href="mail to:" email>
-            {email}
-          </a>
+          <a href={`mailto:${emailAddress}`}>{email}</a>
         </p>
       </div>
     </div>
