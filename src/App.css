@@ -108,7 +108,12 @@ width: fit-content;
 }
 .directoryContainer {
   background-color: #e7e6e7;
-
+  border: 3px solid #8f85d7;
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 10px;
 }
 .infoCardUser {
   display: flex;
