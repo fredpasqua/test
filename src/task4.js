@@ -13,7 +13,7 @@ export default function Task4() {
       .then((json) => setUsers(json.users));
   };
   useEffect(() => apiGET, []);
-
+  //Search Bar Filter
   const filteredUsers = users.filter((user) => {
     return (
       user.firstName.toLowerCase().includes(query.toLowerCase()) ||
@@ -21,6 +21,9 @@ export default function Task4() {
     );
   });
   const searchIcon = <FontAwesomeIcon icon={faSearch} />;
+
+  //To Do: Build Model for user data page
+
   return (
     <>
       <div className="directoryContainer">
