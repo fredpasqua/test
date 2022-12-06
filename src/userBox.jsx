@@ -25,11 +25,11 @@ export default function UserBox({
           )}
         </div>
         <h2 className="task3text">{name}</h2>
-        <p>D.O.M: {manufDate}</p>
+        <p className="dateOfManuf">D.O.M: {manufDate}</p>
       </div>
 
       <div className="addressGroup">
-        <h2 className="addressHeading">Address:</h2>
+        <h2 className="addressHeading">Address</h2>
         <p>{streetAddress.address}</p>
         <p>
           {streetAddress.city}, {streetAddress.state} {streetAddress.postalCode}
