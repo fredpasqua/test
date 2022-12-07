@@ -33,7 +33,7 @@ export default function UserBox({
         <p>
           {streetAddress.city}, {streetAddress.state} {streetAddress.postalCode}
         </p>
-        <p>
+        <p className="robotEmail">
           <a href={`mailto:${emailAddress}`}>{email}</a>
         </p>
       </div>
