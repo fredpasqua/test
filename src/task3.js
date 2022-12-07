@@ -137,7 +137,7 @@ export default function Task3() {
             ))}
           </ul>
         </div>
-        <button onClick={() => handleReset()}>reset</button>
+        <button onClick={() => handleReset()}>Reset</button>
       </div>
     </>
   );

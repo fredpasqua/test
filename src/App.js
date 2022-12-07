@@ -8,7 +8,7 @@ import Nav from "./nav";
 function App() {
   return (
     <div className="App">
-      <h1 className="animate-character">Test Your React.js Skillz</h1>
+      <h1 className="animate-character">Sample React.js Cards UI</h1>
 
       <BrowserRouter>
         <Nav />
