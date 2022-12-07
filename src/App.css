@@ -114,6 +114,8 @@ align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 0;
+  list-style-type: none;
 
 }
 .boxListItems li {
@@ -130,7 +132,7 @@ li {
 	transition: .5s ease-in-out;
   height: 200px;
   width: 200px;
-  margin-left: 30px;
+  
   
 }
 .task3Image:hover {
@@ -142,7 +144,7 @@ li {
 }
 
 .task3text {
-  font-size: 20px;
+  font-size: 12px;
   width: 150px;
   padding: 15px;
   
@@ -150,11 +152,12 @@ li {
 .infoCard {
 display: flex;
 background-color: #d13468;
-justify-content:space-around;
+justify-content:center;
+flex-wrap: wrap;
 margin: 10px;
 padding: 15px;
 border-radius: 10% 20%; 
-width: fit-content;
+width: 400px;
 }
 
 .infoCard h2 {
@@ -182,14 +185,13 @@ padding:10px;
 border-radius: 20px; 
 width: 300px;
 color: white;
-
 }
 
 .searchBar {
   background-color: rgb(215, 120, 199);
-  width: 300px;
+  width: 325px;
   padding: 20px;
-  border-radius: 10px 5px;
+  border-radius: 7px;
   display: flex;
   justify-content: space-around;
   padding: 10px;
@@ -201,26 +203,32 @@ color: white;
 .searchBar input  {
   width: 250px;
   font-size: 23px;
-  
+  margin: 5px;
 }
 input:focus {
   outline: none;
+}
+.userSearchIcon {
+  margin-top: 9px;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 3px;
 }
 .profileBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 .profileBox h2 {
   margin-top: -25px;
   align-self: center;
 }
-
-
-.dateOfManuf{
-  font-size: 18px;
+.robotName{
+  padding: 10px;
 }
+
 
 .addressGroup p  {
 margin-bottom: -5px;
@@ -234,7 +242,7 @@ color: white;
 
 .addressHeading {
   color: white;
-  text-decoration: underline;
+  
 
 
 }

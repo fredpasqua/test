@@ -24,12 +24,11 @@ export default function UserBox({
             title.toUpperCase()
           )}
         </div>
-        <h2 className="task3text">{name}</h2>
-        <p className="dateOfManuf">D.O.M: {manufDate}</p>
+        <h2 className="robotName">{name}</h2>
       </div>
 
       <div className="addressGroup">
-        <h2 className="addressHeading">Address</h2>
+        <h2 className="addressHeading">Address:</h2>
         <p>{streetAddress.address}</p>
         <p>
           {streetAddress.city}, {streetAddress.state} {streetAddress.postalCode}

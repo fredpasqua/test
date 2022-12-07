@@ -30,12 +30,12 @@ export default function Task4() {
         <h1>Robots Company Directory</h1>
 
         <div className="searchBar">
-          {searchIcon}
           <input
             onChange={(e) => setQuery(e.target.value)}
             value={query}
             placeholder="search"
           ></input>
+          <div className="userSearchIcon">{searchIcon}</div>
         </div>
         <div>
           <ul className="boxListItems">
@@ -48,7 +48,6 @@ export default function Task4() {
                     name={user.firstName + " " + user.lastName}
                     image={user.image}
                     streetAddress={user.address}
-                    manufDate={user.birthDate}
                     title={"placeholder"}
                     email={user.email}
                   />

@@ -5,7 +5,6 @@ export default function Task1() {
 
   const handleChange = (event) => {
     setMessage(event.target.value);
-    console.log("value is:", event.target.value.toUppercase());
   };
   const clear = (e) => {
     setMessage("");
