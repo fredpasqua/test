@@ -65,7 +65,8 @@ html, body, body > div, .app {
 .navList  {
 list-style: none;
 display: flex;
-justify-content: space-around;
+justify-content: space-evenly;
+padding: 0;
 
 }
 .taskOne {
@@ -185,6 +186,8 @@ padding:10px;
 border-radius: 20px; 
 width: 300px;
 color: white;
+-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 .searchBar {
@@ -199,6 +202,8 @@ color: white;
   margin-left: auto;
   border: purple 1px solid;
   margin-bottom: 20px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 .searchBar input  {
   width: 250px;
@@ -215,6 +220,7 @@ input:focus {
   width: 30px;
   border-radius: 50%;
   padding: 3px;
+  border: 1px purple solid;
 }
 .profileBox {
   display: flex;
@@ -227,13 +233,14 @@ input:focus {
 }
 .robotName{
   padding: 10px;
+  text-shadow: -5px 2px 8px rgba(63, 0, 87, 0.603);
 }
 
 
 .addressGroup p  {
 margin-bottom: -5px;
 font-size: 16px;
-color: rgb(211, 237, 226);
+color: rgb(255, 255, 255);
 justify-content: center;
 }
 a:hover {
@@ -242,7 +249,7 @@ color: white;
 
 .addressHeading {
   color: white;
-  
+  text-shadow: -5px 2px 8px rgba(63, 0, 87, 0.603);
 
 
 }
