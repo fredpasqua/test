@@ -17,12 +17,12 @@ export default function Nav() {
           </li> */}
           <li>
             <a href="/Task3">
-              <button>Info Card</button>
+              <button>Info-Card</button>
             </a>
           </li>
           <li>
             <a href="/Task4">
-              <button>Address Card</button>
+              <button>Directory</button>
             </a>
           </li>
         </ul>
