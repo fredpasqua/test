@@ -305,10 +305,10 @@ button {
 
 }
 button:hover{
-  transition: 500ms;
+ transition: 500ms;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
  
-  background-color: rgb(255, 192, 237);
+  background-color: purple;
 }
 
 a {
@@ -342,3 +342,40 @@ a {
     transform: rotate(360deg);
   }
 }
+
+
+  
+  /* CSS */
+  .userDetailsButton { 
+    background-color: purple;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    height: 40px;
+    width: 90px;
+    line-height: 20px;
+    list-style: none;
+    margin: 10px;
+    outline: none;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .userDetailsButton:hover,
+  .userDetailsButton:focus {
+    background-color: rgb(172, 0, 172);
+  }
+  
+
+

@@ -37,6 +37,7 @@ export default function UserBox({
           <a href={`mailto:${emailAddress}`}>{email}</a>
         </p>
       </div>
+      <button className="userDetailsButton">User Details</button>
     </div>
   );
 }
