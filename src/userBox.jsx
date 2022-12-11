@@ -30,8 +30,10 @@ export default function UserBox({
       <div className="addressGroup">
         <h2 className="addressHeading">Address:</h2>
         <p>{streetAddress.address}</p>
+        <br></br>
         <p>
           {streetAddress.city}, {streetAddress.state} {streetAddress.postalCode}
+          <br></br>
         </p>
         <p className="robotEmail">
           <a href={`mailto:${emailAddress}`}>{email}</a>
