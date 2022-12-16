@@ -4,9 +4,7 @@ import { useState } from "react";
 export default function Task2() {
   const [toggle, setToggle] = useState(false);
 
-  let toggleIt = () => {
-    setToggle(!toggle);
-  };
+  let toggleIt = () => setToggle(!toggle);
 
   return (
     <div className="squares">
@@ -23,4 +21,5 @@ export default function Task2() {
       />
     </div>
   );
+
 }
