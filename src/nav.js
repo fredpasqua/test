@@ -5,7 +5,7 @@ export default function Nav() {
     <div>
       <nav>
         <ul className="navList">
-          {/* <li>
+          <li>
             <a href="/">
               <button>Task1</button>
             </a>
@@ -14,7 +14,7 @@ export default function Nav() {
             <a href="/Task2">
               <button>Task2</button>
             </a>
-          </li> */}
+          </li>
           <li>
             <a href="/Task3">
               <button>Info-Card</button>
