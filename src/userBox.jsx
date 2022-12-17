@@ -1,5 +1,8 @@
 import React from "react";
 import ReactModal from "react-modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
+
 import { useState } from "react";
 export default function UserBox({
   manufDate,
@@ -11,19 +14,14 @@ export default function UserBox({
 }) {
   let emailAddress = email.toString();
   const [showModal, setShowModal] = useState(false);
-  const handleCloseModal = () => {
+  const onRequestClose = () => {
     setShowModal(false);
   };
   return (
     <>
       <div className="infoCardUser">
         <div className="profileBox">
-          <div
-            className="elementBox"
-            // style={{
-            //   backgroundColor: bgColor,
-            // }}
-          >
+          <div className="elementBox">
             {image ? (
               <img className="task3Image" src={image} alt="robot face" />
             ) : (
@@ -33,19 +31,6 @@ export default function UserBox({
           <h2 className="robotName">{name}</h2>
         </div>
 
-        <div className="addressGroup">
-          <h2 className="addressHeading">Address:</h2>
-          <p>{streetAddress.address}</p>
-          <br></br>
-          <p>
-            {streetAddress.city}, {streetAddress.state}{" "}
-            {streetAddress.postalCode}
-            <br></br>
-          </p>
-          <p className="robotEmail">
-            <a href={`mailto:${emailAddress}`}>{email}</a>
-          </p>
-        </div>
         <button
           className="userDetailsButton"
           onClick={() => setShowModal(true)}
@@ -57,16 +42,43 @@ export default function UserBox({
         isOpen={showModal}
         ariaHideApp={false}
         contentLabel="directory modal"
+        shouldReturnFocusAfterClose={true}
+        onRequestClose={() => onRequestClose()}
+        shouldCloseOnOverlayClick={true}
+        style={{
+          overlay: {
+            backgroundColor: "purple",
+          },
+          content: {
+            left: "10%",
+            right: "10%",
+          },
+        }}
       >
-        <button className="modalCloseButton" onClick={() => handleCloseModal()}>
-          X
-        </button>
-        <p>{name}</p>
+        <FontAwesomeIcon
+          className="modalCloseButton"
+          onClick={() => onRequestClose()}
+          icon={faXmarkCircle}
+          style={{ height: "50px", width: "50px", color: "purple" }}
+        />
+
+        <p>Name: {name}</p>
+        {image ? (
+          <img src={image} className="modalImage" alt="robot face" />
+        ) : (
+          title.toUpperCase()
+        )}
         <p className="robotEmail">
-          <a href={`mailto:${emailAddress}`}>{email}</a>
+          Email: <a href={`mailto:${emailAddress}`}>{email}</a>
         </p>
-        <h2 className="addressHeading">Address:</h2>
+
+        <p>Address:</p>
         <p>{streetAddress.address}</p>
+
+        <p>
+          {streetAddress.city}, {streetAddress.state} {streetAddress.postalCode}
+          <br></br>
+        </p>
       </ReactModal>
     </>
   );

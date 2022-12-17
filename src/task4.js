@@ -8,7 +8,7 @@ export default function Task4() {
   const [query, setQuery] = useState("");
 
   const apiGET = () => {
-    fetch("https://dummyjson.com/users?limit=100")
+    fetch("https://dummyjson.com/users?limit=200")
       .then((res) => res.json())
       .then((json) => setUsers(json.users));
   };

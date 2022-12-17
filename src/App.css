@@ -253,6 +253,12 @@ a:hover {
 color: white;
 }
 
+.modalImage {
+  height: 100px;
+  width: 100px;
+}
+
+
 .addressHeading {
   color: white;
   text-shadow: -5px 2px 8px rgba(63, 0, 87, 0.603);
@@ -310,18 +316,36 @@ button:hover{
  
   background-color: purple;
 }
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
 
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
 .modalCloseButton {
   margin: 0;
+  width: 40px;
+  height: 40px;
   position: absolute;
   opacity: 1;
   z-index: 10;
   cursor: pointer;
   top: 2%;
-  left:90%;
-
-
+  right: 2%;
 }
+
+
+
+.ReactModal {
+  width: 500px;
+}
+
 
 a {
   text-decoration: none;
