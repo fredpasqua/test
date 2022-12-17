@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Task1 from "./task1.js";
 import Task2 from "./task2.js";
 import Task3 from "./task3.js";
@@ -6,7 +6,6 @@ import Task4 from "./task4.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./nav";
 function App() {
-
   return (
     <>
       <div className="App">

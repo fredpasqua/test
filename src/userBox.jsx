@@ -2,7 +2,6 @@ import React from "react";
 import ReactModal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
-
 import { useState } from "react";
 export default function UserBox({
   manufDate,
