@@ -31,7 +31,7 @@ export default function Task4() {
 
         <div className="searchBar">
           <input
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(event) => setQuery(event.target.value)}
             value={query}
             placeholder="search"
           ></input>
@@ -50,6 +50,7 @@ export default function Task4() {
                     streetAddress={user.address}
                     title={"placeholder"}
                     email={user.email}
+                    user={user}
                   />
                 </li>
               ))

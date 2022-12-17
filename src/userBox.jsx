@@ -10,6 +10,7 @@ export default function UserBox({
   image,
   title,
   email,
+  user,
 }) {
   let emailAddress = email.toString();
   const [showModal, setShowModal] = useState(false);
@@ -32,7 +33,10 @@ export default function UserBox({
 
         <button
           className="userDetailsButton"
-          onClick={() => setShowModal(true)}
+          onClick={() => {
+            setShowModal(true);
+            console.log(user);
+          }}
         >
           User Details
         </button>
@@ -49,8 +53,7 @@ export default function UserBox({
             backgroundColor: "purple",
           },
           content: {
-            left: "10%",
-            right: "10%",
+            backgroundColor: "#ddd9f9",
           },
         }}
       >
@@ -58,26 +61,36 @@ export default function UserBox({
           className="modalCloseButton"
           onClick={() => onRequestClose()}
           icon={faXmarkCircle}
-          style={{ height: "50px", width: "50px", color: "purple" }}
+          style={{ height: "40px", width: "40px", color: "purple" }}
         />
+        <div className="modalContainer">
+          <div className="modalLeft">
+            {image ? (
+              <img src={image} className="modalImage" alt="robot face" />
+            ) : (
+              title.toUpperCase()
+            )}
+            <p>Name: {name}</p>
+          </div>
+          <div className="modalRight">
+            <p>Department: {user.company.department}</p>
+            <p>Title: {user.company.title}</p>
+            <p>Gender Identity: {user.gender}</p>
+            <p>Model#: {user.ssn}</p>
+            <p>Weight: {user.weight} Kg</p>
+            <br></br>
+            <p className="email">
+              Email: <a href={`mailto:${emailAddress}`}>{email}</a>
+            </p>
+            <p>Address: {streetAddress.address}</p>
 
-        <p>Name: {name}</p>
-        {image ? (
-          <img src={image} className="modalImage" alt="robot face" />
-        ) : (
-          title.toUpperCase()
-        )}
-        <p className="robotEmail">
-          Email: <a href={`mailto:${emailAddress}`}>{email}</a>
-        </p>
-
-        <p>Address:</p>
-        <p>{streetAddress.address}</p>
-
-        <p>
-          {streetAddress.city}, {streetAddress.state} {streetAddress.postalCode}
-          <br></br>
-        </p>
+            <p>
+              {streetAddress.city}, {streetAddress.state}{" "}
+              {streetAddress.postalCode}
+              <br></br>
+            </p>
+          </div>
+        </div>
       </ReactModal>
     </>
   );

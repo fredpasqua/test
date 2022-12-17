@@ -254,21 +254,49 @@ color: rgb(255, 255, 255);
 justify-content: center;
 }
 a:hover {
-color: white;
+color: rgb(19, 48, 141);
 }
 
 .modalImage {
-  height: 100px;
-  width: 100px;
+  min-height: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 200px;
+  margin-top: -50px;
+  
 }
 
-
-.addressHeading {
-  color: white;
-  text-shadow: -5px 2px 8px rgba(63, 0, 87, 0.603);
-
-
+.modalContainer {
+  display: flex;
+  flex-flow: wrap;
+  height: fit-content;   
+  justify-content: space-around;
 }
+.modalContainer p {
+  font-weight: bold;
+}
+.modalLeft{
+  margin-top: 5%;
+  flex-wrap: wrap;
+  min-width: 20%;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  height: fit-content;
+
+  
+}
+.modalRight{
+  margin-top: 10%;
+  margin-bottom: 25%;
+  min-width: 50%;
+  align-items: center;
+  padding: 20px;
+  text-align: left;
+  height: fit-content;
+}
+
 .taskContainer {
   display: flex; 
   flex-direction: column;
@@ -333,12 +361,10 @@ button:hover{
   opacity: 0;
 }
 .modalCloseButton {
-  margin: 0;
+  margin: 2px;
   width: 40px;
   height: 40px;
   position: absolute;
-  opacity: 1;
-  z-index: 10;
   cursor: pointer;
   top: 2%;
   right: 2%;
