@@ -6,7 +6,11 @@ import UserBox from "./userBox.jsx";
 export default function Task4() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
-
+  //TODO:  Work these functions into sort
+  //   //Sort alpha A-Z
+  // users.sort((a, b) => a.name.toUpperCase() > b.name.toUpperCase());
+  // //Sort alpha Z-A
+  // users.sort((a, b) => a.name.toUpperCase() < b.name.toUpperCase());
   const apiGET = () => {
     fetch("https://dummyjson.com/users?limit=100")
       .then((res) => res.json())
