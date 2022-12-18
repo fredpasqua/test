@@ -7,8 +7,10 @@ export default function Task4() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
   const [ignore, forceUpdate] = useReducer((x) => x + 1, 0);
+  let apiURL1 = "https://dummyjson.com/users?limit=100";
+  let apiURL2 = "https://dummyapi.io/data/v1/user?page=1&limit=10";
   const apiGET = () => {
-    fetch("https://dummyjson.com/users?limit=100")
+    fetch(apiURL1)
       .then((res) => res.json())
       .then((json) => setUsers(json.users));
   };
