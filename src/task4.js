@@ -13,7 +13,7 @@ export default function Task4() {
       .then((json) =>
         setUsers(
           json.users.sort(function (a, b) {
-            if (a.name < b.name) {
+            if (a.lastName < b.lastName) {
               return -1;
             }
             if (a.lastName > b.lastName) {
@@ -30,7 +30,7 @@ export default function Task4() {
       .then((json) =>
         setUsers(
           json.users.sort(function (a, b) {
-            if (a.name < b.name) {
+            if (a.firstName < b.firstName) {
               return -1;
             }
             if (a.firstName > b.firstName) {
@@ -73,7 +73,7 @@ export default function Task4() {
               apiGET2();
             }}
           >
-            Sort A-Z By First Name
+            Sort First A-Z
           </button>
           <button
             className="userDetailsButton"
@@ -81,7 +81,7 @@ export default function Task4() {
               apiGET();
             }}
           >
-            Sort A-Z By Last Name
+            Sort Last A-Z Name
           </button>
         </div>
 
