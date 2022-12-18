@@ -55,18 +55,16 @@ export default function Task4() {
     <>
       <div className="directoryContainer">
         <h1>Robots Company Directory</h1>
-
-        <div className="searchBar">
-          <input
-            onChange={(event) => setQuery(event.target.value)}
-            value={query}
-            placeholder="search"
-          ></input>
-
-          <div className="userSearchIcon">{searchIcon}</div>
-        </div>
         <div className="sortContainer">
-          {" "}
+          <div className="searchBar">
+            <input
+              onChange={(event) => setQuery(event.target.value)}
+              value={query}
+              placeholder="search"
+            ></input>
+
+            <div className="userSearchIcon">{searchIcon}</div>
+          </div>{" "}
           <button
             className="userDetailsButton"
             onClick={() => {

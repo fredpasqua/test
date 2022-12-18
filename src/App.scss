@@ -196,7 +196,20 @@ color: white;
 -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
 box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
+.sortContainer{
+  width: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  position:sticky;
+  top: 0;
+  background-color: $button-color-hover;
+  z-index: 100;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+  border-radius: 10px;
 
+}
 .searchBar {
   background-color: rgb(215, 120, 199);
   width: 325px;
