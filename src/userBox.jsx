@@ -29,13 +29,13 @@ export default function UserBox({
             )}
           </div>
           <h2 className="robotName">{name}</h2>
+          <p className="robotName">{user.company.title}</p>
         </div>
 
         <button
           className="userDetailsButton"
           onClick={() => {
             setShowModal(true);
-            console.log(user);
           }}
         >
           User Details

@@ -8,7 +8,7 @@ export default function Task4() {
   const [query, setQuery] = useState("");
 
   const apiGET = () => {
-    fetch("https://dummyjson.com/users?limit=200")
+    fetch("https://dummyjson.com/users?limit=100")
       .then((res) => res.json())
       .then((json) =>
         setUsers(
@@ -25,7 +25,7 @@ export default function Task4() {
       );
   };
   const apiGET2 = () => {
-    fetch("https://dummyjson.com/users?limit=200")
+    fetch("https://dummyjson.com/users?limit=100")
       .then((res) => res.json())
       .then((json) =>
         setUsers(
@@ -46,7 +46,8 @@ export default function Task4() {
   let filteredUsers = users.filter((user) => {
     return (
       user.firstName.toLowerCase().includes(query.toLowerCase()) ||
-      user.lastName.toLowerCase().includes(query.toLowerCase())
+      user.lastName.toLowerCase().includes(query.toLowerCase()) ||
+      user.company.title.toLowerCase().includes(query.toLowerCase())
     );
   });
   const searchIcon = <FontAwesomeIcon icon={faSearch} />;
@@ -55,12 +56,15 @@ export default function Task4() {
     <>
       <div className="directoryContainer">
         <h1>Robots Company Directory</h1>
+        <p>
+          results match {filteredUsers.length} of {users.length} active robots
+        </p>
         <div className="sortContainer">
           <div className="searchBar">
             <input
               onChange={(event) => setQuery(event.target.value)}
               value={query}
-              placeholder="search"
+              placeholder="search name or title"
             ></input>
 
             <div className="userSearchIcon">{searchIcon}</div>
