@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useReducer } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -6,29 +6,29 @@ import UserBox from "./userBox.jsx";
 export default function Task4() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
-
+  const [ignore, forceUpdate] = useReducer((x) => x + 1, 0);
   const apiGET = () => {
     fetch("https://dummyjson.com/users?limit=100")
       .then((res) => res.json())
-      .then((json) =>
-        setUsers(
-          json.users.sort(
-            (a, b) => a.lastName.toUpperCase() > b.lastName.toUpperCase()
-          )
-        )
-      );
+      .then((json) => setUsers(json.users));
   };
 
-  const apiSortFirstName = () => {
-    fetch("https://dummyjson.com/users?limit=100")
-      .then((res) => res.json())
-      .then((json) =>
-        setUsers(
-          json.users.sort(
-            (a, b) => a.firstName.toUpperCase() > b.firstName.toUpperCase()
-          )
-        )
-      );
+  const sortFirstName = () => {
+    setUsers(
+      users.sort(
+        (a, b) => a.firstName.toUpperCase() > b.firstName.toUpperCase()
+      )
+    );
+    forceUpdate();
+  };
+  const sortLastName = () => {
+    setUsers(
+      users.sort((a, b) => a.lastName.toUpperCase() > b.lastName.toUpperCase())
+    );
+    forceUpdate();
+  };
+  const clear = (e) => {
+    setQuery("");
   };
 
   //Initialize Users on load
@@ -60,25 +60,31 @@ export default function Task4() {
               value={query}
               placeholder="search name or title"
             ></input>
-
             <div className="userSearchIcon">{searchIcon}</div>
           </div>{" "}
-          <button
-            className="userDetailsButton"
-            onClick={() => {
-              apiSortFirstName();
-            }}
-          >
-            Sort First A-Z
-          </button>
-          <button
-            className="userDetailsButton"
-            onClick={() => {
-              apiGET();
-            }}
-          >
-            Sort Last A-Z Name
-          </button>
+          <div className="sortButtonsContainer">
+            {!query ? null : (
+              <button className="userDetailsButton" onClick={clear}>
+                Clear Search
+              </button>
+            )}
+            <button
+              className="userDetailsButton"
+              onClick={() => {
+                sortFirstName();
+              }}
+            >
+              Sort First A-Z
+            </button>
+            <button
+              className="userDetailsButton"
+              onClick={() => {
+                sortLastName();
+              }}
+            >
+              Sort Last A-Z Name
+            </button>
+          </div>
         </div>
 
         <div>
