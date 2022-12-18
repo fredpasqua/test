@@ -6,47 +6,35 @@ import UserBox from "./userBox.jsx";
 export default function Task4() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
-  //TODO:  Work these functions into sort
-  //   //Sort alpha A-Z
-  // users.sort((a, b) => a.name.toUpperCase() > b.name.toUpperCase());
-  // //Sort alpha Z-A
-  // users.sort((a, b) => a.name.toUpperCase() < b.name.toUpperCase());
+
   const apiGET = () => {
     fetch("https://dummyjson.com/users?limit=100")
       .then((res) => res.json())
       .then((json) =>
         setUsers(
-          json.users.sort(function (a, b) {
-            if (a.lastName < b.lastName) {
-              return -1;
-            }
-            if (a.lastName > b.lastName) {
-              return 1;
-            }
-            return 0;
-          })
+          json.users.sort(
+            (a, b) => a.lastName.toUpperCase() > b.lastName.toUpperCase()
+          )
         )
       );
   };
-  const apiGET2 = () => {
+
+  const apiSortFirstName = () => {
     fetch("https://dummyjson.com/users?limit=100")
       .then((res) => res.json())
       .then((json) =>
         setUsers(
-          json.users.sort(function (a, b) {
-            if (a.firstName < b.firstName) {
-              return -1;
-            }
-            if (a.firstName > b.firstName) {
-              return 1;
-            }
-            return 0;
-          })
+          json.users.sort(
+            (a, b) => a.firstName.toUpperCase() > b.firstName.toUpperCase()
+          )
         )
       );
   };
+
+  //Initialize Users on load
   useEffect(() => apiGET, []);
-  //Search Bar Filter
+
+  //Search Bar Filter function
   let filteredUsers = users.filter((user) => {
     return (
       user.firstName.toLowerCase().includes(query.toLowerCase()) ||
@@ -54,6 +42,8 @@ export default function Task4() {
       user.company.title.toLowerCase().includes(query.toLowerCase())
     );
   });
+
+  //Icon for search bar
   const searchIcon = <FontAwesomeIcon icon={faSearch} />;
 
   return (
@@ -76,7 +66,7 @@ export default function Task4() {
           <button
             className="userDetailsButton"
             onClick={() => {
-              apiGET2();
+              apiSortFirstName();
             }}
           >
             Sort First A-Z
