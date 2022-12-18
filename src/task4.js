@@ -82,7 +82,7 @@ export default function Task4() {
                 sortLastName();
               }}
             >
-              Sort Last A-Z Name
+              Sort Last A-Z
             </button>
           </div>
         </div>
