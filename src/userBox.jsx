@@ -33,7 +33,7 @@ export default function UserBox({
         </div>
 
         <button
-          className="userDetailsButton"
+          className="userButton"
           onClick={() => {
             setShowModal(true);
           }}

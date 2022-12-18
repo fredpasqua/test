@@ -64,12 +64,12 @@ export default function Task4() {
           </div>{" "}
           <div className="sortButtonsContainer">
             {!query ? null : (
-              <button className="userDetailsButton" onClick={clear}>
+              <button className="userButton" onClick={clear}>
                 Clear Search
               </button>
             )}
             <button
-              className="userDetailsButton"
+              className="userButton"
               onClick={() => {
                 sortFirstName();
               }}
@@ -77,7 +77,7 @@ export default function Task4() {
               Sort First A-Z
             </button>
             <button
-              className="userDetailsButton"
+              className="userButton"
               onClick={() => {
                 sortLastName();
               }}
