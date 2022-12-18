@@ -10,19 +10,46 @@ export default function Task4() {
   const apiGET = () => {
     fetch("https://dummyjson.com/users?limit=200")
       .then((res) => res.json())
-      .then((json) => setUsers(json.users));
+      .then((json) =>
+        setUsers(
+          json.users.sort(function (a, b) {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.lastName > b.lastName) {
+              return 1;
+            }
+            return 0;
+          })
+        )
+      );
+  };
+  const apiGET2 = () => {
+    fetch("https://dummyjson.com/users?limit=200")
+      .then((res) => res.json())
+      .then((json) =>
+        setUsers(
+          json.users.sort(function (a, b) {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.firstName > b.firstName) {
+              return 1;
+            }
+            return 0;
+          })
+        )
+      );
   };
   useEffect(() => apiGET, []);
   //Search Bar Filter
-  const filteredUsers = users.filter((user) => {
+  let filteredUsers = users.filter((user) => {
     return (
       user.firstName.toLowerCase().includes(query.toLowerCase()) ||
       user.lastName.toLowerCase().includes(query.toLowerCase())
     );
   });
   const searchIcon = <FontAwesomeIcon icon={faSearch} />;
-
-  //To Do: Build Model for user data page
 
   return (
     <>
@@ -35,8 +62,29 @@ export default function Task4() {
             value={query}
             placeholder="search"
           ></input>
+
           <div className="userSearchIcon">{searchIcon}</div>
         </div>
+        <div className="sortContainer">
+          {" "}
+          <button
+            className="userDetailsButton"
+            onClick={() => {
+              apiGET2();
+            }}
+          >
+            Sort A-Z By First Name
+          </button>
+          <button
+            className="userDetailsButton"
+            onClick={() => {
+              apiGET();
+            }}
+          >
+            Sort A-Z By Last Name
+          </button>
+        </div>
+
         <div>
           <ul className="boxListItems">
             {filteredUsers < 1 ? (
