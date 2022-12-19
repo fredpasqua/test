@@ -55,11 +55,11 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 //ROBOT DIRECTORY SASS COLORS
-$button-color: hsl(264, 72%, 27%);
-$button-color-hover: #5e25b5;
+$button-color: #ebb925;
 $button-boxShadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-$component-border: rgb(94, 6, 237) 1px solid;
-$card-background-color: rgb(143, 45, 207);
+$component-border: #EB6E80;
+$card-background-color: #008F95;
+$component-field-color: white; 
 
 html, body, body > div, .app {
   height: 100%;
@@ -180,7 +180,7 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: #eca0ec;
+  background-color: $component-field-color;
   border: $component-border;
   border-radius: 20px;
   width: 95vw;
@@ -209,7 +209,7 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   flex-wrap: wrap;
   position:sticky;
   top: 0;
-  background-color: #8f85d7;
+  background-color: $card-background-color;
   z-index: 100;
   height: fit-content;
   align-items: center;
@@ -222,7 +222,7 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 justify-content: space-around;
 }
 .searchBar {
-  background-color: rgb(215, 120, 199);
+  background-color: $component-border;
   width: fit-content;
   padding: 20px;
   border-radius: 7px;
@@ -268,7 +268,7 @@ input:focus {
 }
 .robotName{
   padding: 10px;
-  text-shadow: -5px 2px 8px $button-color-hover;
+  text-shadow: -5px 2px 8px $button-color;
 }
 .robotEmail {
   padding: 5px;
@@ -375,8 +375,7 @@ button {
 button:hover{
  transition: 500ms;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
- 
-  background-color: $button-color-hover;
+ filter: brightness(85%);
 }
 .ReactModal__Overlay {
   opacity: 0;
@@ -471,13 +470,13 @@ a {
   
   .userButton:hover
  {
-    background-color: $button-color-hover;
+   filter: brightness(85%);
     box-shadow: $button-boxShadow;
     text-decoration: underline;
   }
   .userButton:active
   {
-    background-color: $button-color-hover;
+   
     box-shadow: none;
   }
   .userButton:focus{
@@ -517,13 +516,13 @@ a {
   
   .userButtonCard:hover
  {
-    background-color: $button-color-hover;
+  filter: brightness(85%);
     box-shadow: $button-boxShadow;
     text-decoration: underline;
   }
   .userButtonCard:active
   {
-    background-color: $button-color-hover;
+    filter: brightness(85%);
     box-shadow: none;
   }
   .userButtonCard:focus{
