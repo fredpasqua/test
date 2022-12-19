@@ -23,9 +23,23 @@ export default function Task4() {
     );
     forceUpdate();
   };
+  const sortFirstNameZA = () => {
+    setUsers(
+      users.sort(
+        (a, b) => a.firstName.toUpperCase() < b.firstName.toUpperCase()
+      )
+    );
+    forceUpdate();
+  };
   const sortLastName = () => {
     setUsers(
       users.sort((a, b) => a.lastName.toUpperCase() > b.lastName.toUpperCase())
+    );
+    forceUpdate();
+  };
+  const sortLastNameZA = () => {
+    setUsers(
+      users.sort((a, b) => a.lastName.toUpperCase() < b.lastName.toUpperCase())
     );
     forceUpdate();
   };
@@ -76,7 +90,15 @@ export default function Task4() {
                 sortFirstName();
               }}
             >
-              Sort First A-Z
+              First A-Z
+            </button>
+            <button
+              className="userButton"
+              onClick={() => {
+                sortFirstNameZA();
+              }}
+            >
+              First Z-A
             </button>
             <button
               className="userButton"
@@ -84,7 +106,15 @@ export default function Task4() {
                 sortLastName();
               }}
             >
-              Sort Last A-Z
+              Last A-Z
+            </button>
+            <button
+              className="userButton"
+              onClick={() => {
+                sortLastNameZA();
+              }}
+            >
+              Last Z-A
             </button>
           </div>
         </div>
