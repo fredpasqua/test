@@ -59,6 +59,7 @@ $button-color: hsl(264, 72%, 27%);
 $button-color-hover: #5e25b5;
 $button-boxShadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 $component-border: rgb(94, 6, 237) 1px solid;
+$card-background-color: rgb(143, 45, 207);
 
 html, body, body > div, .app {
   height: 100%;
@@ -189,7 +190,7 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   margin-bottom: 30px;
 }
 .infoCardUser {
-background-color: #8f85d7;
+background-color: $card-background-color;
 border: $component-border;
 font-size: 12px;
 margin: 10px;
