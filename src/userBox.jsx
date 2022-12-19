@@ -49,7 +49,7 @@ export default function UserBox({
         shouldCloseOnOverlayClick={true}
         style={{
           overlay: {
-            backgroundColor: "purple",
+            backgroundColor: "#008F95",
           },
           content: {
             backgroundColor: "#ddd9f9",
@@ -60,7 +60,7 @@ export default function UserBox({
           className="modalCloseButton"
           onClick={() => onRequestClose()}
           icon={faXmarkCircle}
-          style={{ height: "40px", width: "40px", color: "purple" }}
+          style={{ height: "40px", width: "40px", color: "#3794ca" }}
         />
         <div className="modalContainer">
           <div className="modalLeft">
