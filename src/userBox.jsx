@@ -30,16 +30,15 @@ export default function UserBox({
           </div>
           <h2 className="robotName">{name}</h2>
           <p className="robotName">{user.company.title}</p>
+          <button
+            className="userButtonCard"
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
+            User Details
+          </button>
         </div>
-
-        <button
-          className="userButton"
-          onClick={() => {
-            setShowModal(true);
-          }}
-        >
-          User Details
-        </button>
       </div>
       <ReactModal
         isOpen={showModal}
