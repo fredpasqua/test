@@ -55,7 +55,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 //ROBOT DIRECTORY SASS COLORS
-$button-color: #ebb925;
+$button-color: #3794ca;
 $button-boxShadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 $component-border: #EB6E80;
 $card-background-color: #008F95;
@@ -373,7 +373,7 @@ button {
 
 }
 button:hover{
- transition: 500ms;
+ transition: 100ms;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
  filter: brightness(85%);
 }
