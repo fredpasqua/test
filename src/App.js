@@ -51,7 +51,7 @@ function App() {
   };
 
   //Initialize Users on load
-  useEffect(() => apiGET, []);
+  useEffect(() => apiGET(), []);
 
   //Search Bar Filter function
   let filteredUsers = users.filter((user) => {
