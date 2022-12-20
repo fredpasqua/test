@@ -20,7 +20,7 @@ export default function UserBox({
   return (
     <>
       <div className="infoCardUser">
-        <h2>{name}</h2>
+        <h2 className="userName">{name}</h2>
         <div className="elementBox">
           {image ? (
             <img className="userImage" src={image} alt="robot face" />
