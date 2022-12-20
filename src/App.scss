@@ -58,7 +58,7 @@ p, h1, h2, h3, h4, h5, h6 {
 $button-color: #3794ca;
 $button-boxShadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 $component-border: #EB6E80;
-$card-background-color: #008F95;
+$card-background-color: #007b7f;
 $component-field-color: white; 
 
 html, body, body > div, .app {
@@ -269,9 +269,9 @@ input:focus {
 
 .elementBox {
   display: flex;
-  margin: 20px;
-  height: 75px;
-  width: 75px;
+  margin: 10px;
+  height: 100px;
+  width: 100px;
   border: 1px black solid;
   align-items: center;
   justify-content: center;

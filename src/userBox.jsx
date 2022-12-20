@@ -28,7 +28,7 @@ export default function UserBox({
             title.toUpperCase()
           )}
         </div>
-        <p>{user.company.title}</p>
+        <h3>{user.company.title}</h3>
         <button
           className="userButtonCard"
           onClick={() => {
