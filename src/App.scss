@@ -1,22 +1,16 @@
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
 * {
   margin: 0;
 }
-
 html, body {
   height: 100%;
 }
-
 body {
   line-height: 1.25;
   -webkit-font-smoothing: antialiased;
 }
-
-
 //ROBOT DIRECTORY SASS COLORS
 $button-color: #3794ca;
 $button-boxShadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
@@ -58,52 +52,26 @@ align-items: center;
   justify-content: center;
 
 }
-.taskThreeBox {
-  display: flex;
-  margin-top: 20px;
-  font-size: 24px;
-  height: fit-content;
-  width:fit-content;
-  margin: 20px;
-}
-.hideMe {
-  
-}
-
 .boxListItems{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0;
   list-style-type: none;
-
 }
 .boxListItems li {
  list-style-type: none;
 }
-
-li {
-  list-style-type: none;
-}
 .userImage {
-
 	-webkit-transition: .3s ease-in-out;
 	transition: .5s ease-in-out;
   height: 100px;
   width: 100px;
 }
 .userImage:hover {
-
   transition: .5s ease-out;
-transform: scale(1.5);
+  transform: scale(1.5);
   margin-left: 0px;
-}
-
-.task3text {
-  font-size: 12px;
-  width: 150px;
-  padding: 15px;
-  
 }
 .infoCard {
 display: flex;
@@ -117,27 +85,25 @@ width: 400px;
 -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
 box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
-
 .infoCardUser h2 {
   color: white;
   text-align: center;
 }
-
 .infoCardUser {
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 1.2rem;
-background-color: $card-background-color;
-border: $component-border;
-font-size: 12px;
-margin: 5px;
-padding:20px;
-border-radius: 20px; 
-width: 275px;
-color: white;
--webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  background-color: $card-background-color;
+  border: $component-border;
+  font-size: 12px;
+  margin: 5px;
+  padding:20px;
+  border-radius: 20px; 
+  width: 275px;
+  color: white;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 .sortContainer{
   color: white;
@@ -169,7 +135,7 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   border: $component-border;
   margin: 10px; 
   -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 .searchBar input  {
   height: 40px;
@@ -282,35 +248,6 @@ color: rgb(19, 48, 141);
   align-items: center;
 }
 
-
-.animate-character
-{
-   text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #e1b2d2 0%,
-    #c4b6d4 29%,
-    #d13468 67%,
-    #ff0084 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 2s linear infinite;
-  display: inline-block;
-      font-size: 24px;
-}
-
-@keyframes textclip {
-  to {
-    background-position:200% center;
-  }
-}
 button {
   background-color: $button-color;
   height: 100px;
@@ -352,48 +289,14 @@ button:hover{
   color: $button-color;
 }
 
-
-
 .ReactModal {
   width: 500px;
 }
-
 
 a {
   text-decoration: none;
   color: black;
 }
-
-.clearButton {
-  background-color: lightgrey;
-  height: 20px;
-  width: 60px;
-  border: 1px black solid;
-  border-radius: 5px;
-}
-
-.task2Button {
-  margin: 10px;
-  height: 200px;
-  width: 200px;
-  border-radius: 0px;
-}
-.squares {
-  text-align: center;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-  
-  /* CSS */
   .userButton { 
     background-color: $button-color;
     border-radius: 8px;

@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import UserBox from "./userBox.jsx";
+import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
+
 export default function Directory() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
@@ -77,10 +79,12 @@ export default function Directory() {
             value={query}
             placeholder="search name or title"
           ></input>
-
-          <button className="userSearchIcon" onClick={clear}>
-            X
-          </button>
+          <FontAwesomeIcon
+            onClick={() => clear()}
+            icon={faXmarkCircle}
+            className="cancelCircle"
+            style={{}}
+          />
         </div>{" "}
         <div className="sortButtonsContainer">
           <button
