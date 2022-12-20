@@ -61,9 +61,6 @@ export default function Directory() {
     );
   });
 
-  //Icon for search bar
-  const searchIcon = <FontAwesomeIcon icon={faSearch} />;
-
   return (
     <>
       <div className="sortContainer">
@@ -82,8 +79,13 @@ export default function Directory() {
           <FontAwesomeIcon
             onClick={() => clear()}
             icon={faXmarkCircle}
-            className="cancelCircle"
-            style={{}}
+            style={{
+              color: "#3794ca",
+              backgroundColor: "white",
+              borderRadius: "50%",
+              height: "35px",
+              marginTop: "8px",
+            }}
           />
         </div>{" "}
         <div className="sortButtonsContainer">

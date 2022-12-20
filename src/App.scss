@@ -63,14 +63,15 @@ align-items: center;
  list-style-type: none;
 }
 .userImage {
-	-webkit-transition: .3s ease-in-out;
-	transition: .5s ease-in-out;
+	-webkit-transition: .2s ease-in;
+
   height: 100px;
   width: 100px;
 }
 .userImage:hover {
-  transition: .5s ease-out;
-  transform: scale(1.5);
+  
+  transform: scale(1.2);
+
   margin-left: 0px;
 }
 .infoCard {
@@ -143,12 +144,7 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   font-size: 23px;
   margin: 5px;
 }
-.cancelCircle {
-  color: "red";
-              height: "30px";
-              width: "30px";
-              margin-top: "10px";
-}
+
 
 
 input:focus {
@@ -309,7 +305,7 @@ a {
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-weight: 500;
+    font-weight: 600;
     height: 40px;
     width: fit-content;
     line-height: 20px;
