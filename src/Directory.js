@@ -64,81 +64,80 @@ export default function Directory() {
 
   return (
     <>
-      <div className="directoryContainer">
-        <div className="sortContainer">
+      <div className="sortContainer">
+        <div className="sortRight">
           <h1>Robots Company Directory</h1>
           <p>
             results match {filteredUsers.length} of {users.length} active robots
           </p>
-          <div className="searchBar">
-            <input
-              onChange={(event) => setQuery(event.target.value)}
-              value={query}
-              placeholder="search name or title"
-            ></input>
-            <div className="userSearchIcon">{searchIcon}</div>
-          </div>{" "}
-          <div className="sortButtonsContainer">
-            {!query ? null : (
-              <button className="userButton" onClick={clear}>
-                Clear Search
-              </button>
-            )}
-            <button
-              className="userButton"
-              onClick={() => {
-                sortFirstName();
-              }}
-            >
-              First A-Z
-            </button>
-            <button
-              className="userButton"
-              onClick={() => {
-                sortFirstNameZA();
-              }}
-            >
-              First Z-A
-            </button>
-            <button
-              className="userButton"
-              onClick={() => {
-                sortLastName();
-              }}
-            >
-              Last A-Z
-            </button>
-            <button
-              className="userButton"
-              onClick={() => {
-                sortLastNameZA();
-              }}
-            >
-              Last Z-A
-            </button>
-          </div>
         </div>
+        <div className="searchBar">
+          <input
+            onChange={(event) => setQuery(event.target.value)}
+            value={query}
+            placeholder="search name or title"
+          ></input>
+          <div className="userSearchIcon">{searchIcon}</div>
+        </div>{" "}
+        <div className="sortButtonsContainer">
+          <button className="userButton" onClick={clear}>
+            Clear Search
+          </button>
 
-        <div>
-          <ul className="boxListItems">
-            {filteredUsers < 1 ? (
-              <h2>No known user with that name</h2>
-            ) : (
-              filteredUsers.map((user) => (
-                <li key={user.id}>
-                  <UserBox
-                    name={user.firstName + " " + user.lastName}
-                    image={user.image}
-                    streetAddress={user.address}
-                    title={"placeholder"}
-                    email={user.email}
-                    user={user}
-                  />
-                </li>
-              ))
-            )}
-          </ul>
+          <button
+            className="userButton"
+            onClick={() => {
+              sortFirstName();
+            }}
+          >
+            First A-Z
+          </button>
+          <button
+            className="userButton"
+            onClick={() => {
+              sortFirstNameZA();
+            }}
+          >
+            First Z-A
+          </button>
+          <button
+            className="userButton"
+            onClick={() => {
+              sortLastName();
+            }}
+          >
+            Last A-Z
+          </button>
+          <button
+            className="userButton"
+            onClick={() => {
+              sortLastNameZA();
+            }}
+          >
+            Last Z-A
+          </button>
         </div>
+      </div>
+
+      <div>
+        <ul className="boxListItems">
+          {filteredUsers < 1 ? (
+            <h2>No known user with that name</h2>
+          ) : (
+            filteredUsers.map((user) => (
+              <li key={user.id}>
+                <UserBox
+                  name={user.firstName + " " + user.lastName}
+                  image={user.image}
+                  streetAddress={user.address}
+                  title={"placeholder"}
+                  email={user.email}
+                  user={user}
+                />
+              </li>
+            ))
+          )}
+        </ul>
       </div>
     </>
   );
