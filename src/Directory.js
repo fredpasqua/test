@@ -77,13 +77,12 @@ export default function Directory() {
             value={query}
             placeholder="search name or title"
           ></input>
-          <div className="userSearchIcon">{searchIcon}</div>
+
+          <button className="userSearchIcon" onClick={clear}>
+            X
+          </button>
         </div>{" "}
         <div className="sortButtonsContainer">
-          <button className="userButton" onClick={clear}>
-            Clear Search
-          </button>
-
           <button
             className="userButton"
             onClick={() => {
