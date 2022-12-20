@@ -20,25 +20,23 @@ export default function UserBox({
   return (
     <>
       <div className="infoCardUser">
-        <div className="profileBox">
-          <div className="elementBox">
-            {image ? (
-              <img className="task3Image" src={image} alt="robot face" />
-            ) : (
-              title.toUpperCase()
-            )}
-          </div>
-          <h2 className="robotName">{name}</h2>
-          <p className="robotName">{user.company.title}</p>
-          <button
-            className="userButtonCard"
-            onClick={() => {
-              setShowModal(true);
-            }}
-          >
-            User Details
-          </button>
+        <h2>{name}</h2>
+        <div className="elementBox">
+          {image ? (
+            <img className="userImage" src={image} alt="robot face" />
+          ) : (
+            title.toUpperCase()
+          )}
         </div>
+        <p>{user.company.title}</p>
+        <button
+          className="userButtonCard"
+          onClick={() => {
+            setShowModal(true);
+          }}
+        >
+          User Details
+        </button>
       </div>
       <ReactModal
         isOpen={showModal}

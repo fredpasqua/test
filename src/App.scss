@@ -108,18 +108,7 @@ align-items: center;
   margin: 20px;
 }
 
-.elementBox {
-  display: flex;
-  margin: 20px;
-  height: 75px;
-  width: 75px;
-  border: 1px black solid;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 50%;
-  background-color: rgb(155, 176, 239);
-}
+
 .boxListItems{
   display: flex;
   flex-wrap: wrap;
@@ -135,7 +124,7 @@ align-items: center;
 li {
   list-style-type: none;
 }
-.task3Image {
+.userImage {
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 	-webkit-transition: .3s ease-in-out;
@@ -145,7 +134,7 @@ li {
   
   
 }
-.task3Image:hover {
+.userImage:hover {
 	-webkit-filter: grayscale(0);
 	filter: grayscale(0);
   transition: .5s ease-out;
@@ -173,8 +162,9 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 
 }
 
-.infoCard h2 {
+.infoCardUser h2 {
   color: white;
+  text-align: center;
 }
 .directoryContainer {
   display: flex;
@@ -190,6 +180,10 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   margin-bottom: 30px;
 }
 .infoCardUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2rem;
 background-color: $card-background-color;
 border: $component-border;
 font-size: 12px;
@@ -266,12 +260,23 @@ input:focus {
   margin-top: -25px;
   align-self: center;
 }
-.robotName{
-  padding: 10px;
-  text-shadow: -5px 2px 8px $button-color;
-}
+
+
 .robotEmail {
   padding: 5px;
+}
+
+.elementBox {
+  display: flex;
+  margin: 20px;
+  height: 75px;
+  width: 75px;
+  border: 1px black solid;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: rgb(155, 176, 239);
 }
 
 
@@ -458,7 +463,7 @@ a {
     list-style: none;
     margin: 10px;
     outline: none;
-    padding: 5px;
+    padding: 10px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -494,25 +499,12 @@ a {
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-weight: 500;
+    font-weight: 600;
     height: 40px;
     width: fit-content;
-    line-height: 20px;
-    list-style: none;
-    margin: 10px;
-    outline: none;
-    padding: 5px;
-    position: absolute;
-    margin-top: 220px;
-    text-align: center;
+    padding: 10px;
     text-decoration: none;
     transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    
-    
   }
   
   .userButtonCard:hover

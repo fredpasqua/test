@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import UserBox from "./userBox.jsx";
-export default function Task4() {
+export default function Directory() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
   const [ignore, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -65,11 +65,11 @@ export default function Task4() {
   return (
     <>
       <div className="directoryContainer">
-        <h1>Robots Company Directory</h1>
-        <p>
-          results match {filteredUsers.length} of {users.length} active robots
-        </p>
         <div className="sortContainer">
+          <h1>Robots Company Directory</h1>
+          <p>
+            results match {filteredUsers.length} of {users.length} active robots
+          </p>
           <div className="searchBar">
             <input
               onChange={(event) => setQuery(event.target.value)}

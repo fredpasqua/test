@@ -6,8 +6,8 @@ export default function Nav() {
       <nav>
         <ul className="navList">
           <li>
-            <a href="/">
-              <button>Task1</button>
+            <a href="/Directory">
+              <button>Directory</button>
             </a>
           </li>
           <li>

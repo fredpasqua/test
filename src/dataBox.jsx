@@ -8,7 +8,7 @@ export default function DataBox({ title, bgColor, visibility, image, text }) {
         }}
       >
         {image ? (
-          <img className="task3Image" src={image} alt="mushroom" />
+          <img className="userImage" src={image} alt="mushroom" />
         ) : (
           title.toUpperCase()
         )}
