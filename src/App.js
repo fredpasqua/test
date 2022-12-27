@@ -134,11 +134,11 @@ function App() {
           >
             Last Z-A
           </button>
-          <DropDown
-            users={users}
-            updateSelectedDepartment={updateSelectedDepartment}
-          />
         </div>
+        <DropDown
+          users={users}
+          updateSelectedDepartment={updateSelectedDepartment}
+        />
       </div>
 
       <div>
