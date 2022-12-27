@@ -1,15 +1,16 @@
 import "./App.scss";
 import { useEffect, useReducer } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import UserBox from "./userBox.jsx";
 import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
+import DropDown from "./select";
 
 function App() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
   const [ignore, forceUpdate] = useReducer((x) => x + 1, 0);
+
   let apiURL1 = "https://dummyjson.com/users?limit=100";
   // let apiURL2 = "https://dummyapi.io/data/v1/user?page=1&limit=10";
   const apiGET = () => {
@@ -17,7 +18,8 @@ function App() {
       .then((res) => res.json())
       .then((json) => setUsers(json.users));
   };
-  console.log(users);
+
+  //Functions for sorting by names
   const sortFirstName = () => {
     setUsers(
       users.sort(
@@ -26,6 +28,7 @@ function App() {
     );
     forceUpdate();
   };
+
   const sortFirstNameZA = () => {
     setUsers(
       users.sort(
@@ -34,6 +37,7 @@ function App() {
     );
     forceUpdate();
   };
+
   const sortLastName = () => {
     setUsers(
       users.sort((a, b) => a.lastName.toUpperCase() > b.lastName.toUpperCase())
@@ -46,6 +50,7 @@ function App() {
     );
     forceUpdate();
   };
+
   const clear = (e) => {
     setQuery("");
   };
@@ -61,7 +66,6 @@ function App() {
       user.company.title.toLowerCase().includes(query.toLowerCase())
     );
   });
-
   return (
     <>
       <div className="sortContainer">
@@ -123,6 +127,7 @@ function App() {
             Last Z-A
           </button>
         </div>
+        <DropDown users={users} />
       </div>
 
       <div>
