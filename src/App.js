@@ -5,12 +5,12 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import UserBox from "./userBox.jsx";
 import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
-import DropdownMenu from "./dropdown";
+
 function App() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
   const [ignore, forceUpdate] = useReducer((x) => x + 1, 0);
-  let apiURL1 = "https://dummyjson.com/users?limit=10";
+  let apiURL1 = "https://dummyjson.com/users?limit=100";
   // let apiURL2 = "https://dummyapi.io/data/v1/user?page=1&limit=10";
   const apiGET = () => {
     fetch(apiURL1)
@@ -89,7 +89,6 @@ function App() {
             }}
           />
         </div>{" "}
-        <DropdownMenu users={users} />
         <div className="sortButtonsContainer">
           <button
             className="userButton"
