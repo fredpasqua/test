@@ -10,13 +10,19 @@ function App() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
   const [ignore, forceUpdate] = useReducer((x) => x + 1, 0);
+  const [selectedDepartment, setSelectedDepartment] = useState("");
 
+  const updateSelectedDepartment = (e) => {
+    setSelectedDepartment(e);
+    setQuery(e);
+  };
   let apiURL1 = "https://dummyjson.com/users?limit=100";
   // let apiURL2 = "https://dummyapi.io/data/v1/user?page=1&limit=10";
   const apiGET = () => {
     fetch(apiURL1)
       .then((res) => res.json())
       .then((json) => setUsers(json.users));
+    console.log(users);
   };
 
   //Functions for sorting by names
@@ -61,11 +67,13 @@ function App() {
   //Search Bar Filter function
   let filteredUsers = users.filter((user) => {
     return (
+      user.company.department.toLowerCase().includes(query.toLowerCase()) ||
       user.firstName.toLowerCase().includes(query.toLowerCase()) ||
       user.lastName.toLowerCase().includes(query.toLowerCase()) ||
       user.company.title.toLowerCase().includes(query.toLowerCase())
     );
   });
+
   return (
     <>
       <div className="sortContainer">
@@ -126,8 +134,11 @@ function App() {
           >
             Last Z-A
           </button>
+          <DropDown
+            users={users}
+            updateSelectedDepartment={updateSelectedDepartment}
+          />
         </div>
-        <DropDown users={users} />
       </div>
 
       <div>

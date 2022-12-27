@@ -1,8 +1,12 @@
 import React from "react";
-
+import { useState } from "react";
 import Select from "react-select";
 
-export default function DropDown({ users }) {
+export default function DropDown({ users, updateSelectedDepartment }) {
+  const handleChange = (e) => {
+    updateSelectedDepartment(e);
+  };
+
   let departments = users
     .map((user) => ({
       value: user.company.department,
@@ -14,9 +18,15 @@ export default function DropDown({ users }) {
     );
 
   return (
-    <div className="departments">
-      Search by department
-      <Select options={departments} />
+    <div className="flex">
+      <div className="search">
+        Search by Department
+        <Select
+          className="departments"
+          options={departments}
+          onChange={(e) => handleChange(e.value)}
+        />
+      </div>
     </div>
   );
 }
