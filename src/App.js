@@ -12,20 +12,21 @@ function App() {
   const [ignore, forceUpdate] = useReducer((x) => x + 1, 0);
   const [selectedDepartment, setSelectedDepartment] = useState("");
 
-  const updateSelectedDepartment = (e) => {
-    setSelectedDepartment(e);
-    setQuery(e);
-  };
-  let apiURL1 = "https://dummyjson.com/users?limit=100";
-  // let apiURL2 = "https://dummyapi.io/data/v1/user?page=1&limit=10";
+  //Initialize Users on load
+  useEffect(() => apiGET(), []);
+
+  //Set the API url
+  let apiURL = "https://dummyjson.com/users?limit=100";
+
+  //FETCH users from DummyJson.com
   const apiGET = () => {
-    fetch(apiURL1)
+    fetch(apiURL)
       .then((res) => res.json())
       .then((json) => setUsers(json.users));
     console.log(users);
   };
 
-  //Functions for sorting by names
+  //Functions for sorting by names, first and last, by A-Z and Z-A; Mutates Users state.
   const sortFirstName = () => {
     setUsers(
       users.sort(
@@ -61,9 +62,6 @@ function App() {
     setQuery("");
   };
 
-  //Initialize Users on load
-  useEffect(() => apiGET(), []);
-
   //Search Bar Filter function
   let filteredUsers = users.filter((user) => {
     return (
@@ -73,6 +71,12 @@ function App() {
       user.company.title.toLowerCase().includes(query.toLowerCase())
     );
   });
+
+  //Drop Down Menu Calls this function to set state of SelecetedDepartments
+  const updateSelectedDepartment = (e) => {
+    setSelectedDepartment(e);
+    setQuery(e);
+  };
 
   return (
     <>
