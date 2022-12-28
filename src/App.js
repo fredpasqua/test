@@ -91,7 +91,7 @@ function App() {
     <>
       <div className="sortContainer">
         <div className="sortRight">
-          <h1>Robots Company Directory</h1>
+          <h1>Robots Directory</h1>
           <p>
             results match {filteredUsers.length} of {users.length} active robots
           </p>
