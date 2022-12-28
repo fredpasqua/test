@@ -2,10 +2,15 @@ import React from "react";
 import Select from "react-select";
 
 export default function DropDown({ users, updateSelectedDepartment }) {
+  //event handler calls function from app.js to update state of selectedDepartments
   const handleChange = (e) => {
     updateSelectedDepartment(e);
   };
+
+  //create a variable to hold object to inject into departments array for clearing the selectedDepartment sort
   let reset = { value: "", label: "All Departments" };
+
+  //creates departments variable for use by react.select component
   let departments = users
     .map((user) => ({
       value: user.company.department,
@@ -17,7 +22,9 @@ export default function DropDown({ users, updateSelectedDepartment }) {
         a.findIndex((v2) => JSON.stringify(v2) === JSON.stringify(v)) === i
     );
   departments.push(reset);
-  departments.sort((a, b) => a - b);
+
+  //Alphabetize list of options for react.select component
+  departments.sort((a, b) => (a.value > b.value ? 1 : -1));
 
   return (
     <div className="flex">
@@ -26,7 +33,7 @@ export default function DropDown({ users, updateSelectedDepartment }) {
         <Select
           className="departments"
           options={departments}
-          value="null"
+          placeholder="All Departments"
           onChange={(e) => handleChange(e.value)}
         />
       </div>
