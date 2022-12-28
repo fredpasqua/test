@@ -62,20 +62,30 @@ function App() {
     setQuery("");
   };
 
-  //Search Bar Filter function
-  let filteredUsers = users.filter((user) => {
-    return (
-      user.company.department.toLowerCase().includes(query.toLowerCase()) ||
-      user.firstName.toLowerCase().includes(query.toLowerCase()) ||
-      user.lastName.toLowerCase().includes(query.toLowerCase()) ||
-      user.company.title.toLowerCase().includes(query.toLowerCase())
-    );
-  });
+
+
+
+
+let preFilteredUsers = [];
+selectedDepartment.length > 0
+  ? (preFilteredUsers = users.filter((user) => {
+      return user.company.department
+        .toLowerCase()
+        .includes(selectedDepartment.toLowerCase());
+    }))
+  : (preFilteredUsers = users);
+//Search Bar Filter function
+let filteredUsers = preFilteredUsers.filter((user) => {
+  return (
+    user.firstName.toLowerCase().includes(query.toLowerCase()) ||
+    user.lastName.toLowerCase().includes(query.toLowerCase()) ||
+    user.company.title.toLowerCase().includes(query.toLowerCase())
+  );
+});
 
   //Drop Down Menu Calls this function to set state of SelecetedDepartments
   const updateSelectedDepartment = (e) => {
     setSelectedDepartment(e);
-    setQuery(e);
   };
 
   return (

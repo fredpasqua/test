@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import Select from "react-select";
 
 export default function DropDown({ users, updateSelectedDepartment }) {
@@ -12,6 +11,7 @@ export default function DropDown({ users, updateSelectedDepartment }) {
       value: user.company.department,
       label: user.company.department,
     }))
+
     .filter(
       (v, i, a) =>
         a.findIndex((v2) => JSON.stringify(v2) === JSON.stringify(v)) === i
@@ -24,6 +24,7 @@ export default function DropDown({ users, updateSelectedDepartment }) {
         <Select
           className="departments"
           options={departments}
+          placeholder="All Departments"
           onChange={(e) => handleChange(e.value)}
         />
       </div>
