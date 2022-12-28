@@ -29,7 +29,6 @@ export default function DropDown({ users, updateSelectedDepartment }) {
   return (
     <div className="flex">
       <div className="search">
-        Search by Department
         <Select
           className="departments"
           options={departments}
