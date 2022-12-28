@@ -95,6 +95,12 @@ function App() {
           <p>
             results match {filteredUsers.length} of {users.length} active robots
           </p>
+          <a
+            href="https://fredpasqua.github.io/my-portfolio/#project"
+            className="portfolio-link"
+          >
+            RETURN TO PORTFOLIO
+          </a>
         </div>
         <div className="searchBar">
           <input
