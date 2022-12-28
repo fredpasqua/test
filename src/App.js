@@ -5,7 +5,7 @@ import { useState } from "react";
 import UserBox from "./userBox.jsx";
 import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
 import DropDown from "./select";
-
+import { CircularProgress } from "react-loading-indicators";
 function App() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
@@ -86,7 +86,15 @@ function App() {
     setSelectedDepartment(e);
   };
 
-  return (
+  return filteredUsers.length === 0 ? (
+    <CircularProgress
+      variant="bubble-dotted"
+      color="#5320bd"
+      size="medium"
+      text=""
+      textColor="#581890"
+    />
+  ) : (
     <>
       <div className="sortContainer">
         <div className="sortRight">
