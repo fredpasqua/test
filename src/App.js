@@ -29,32 +29,28 @@ function App() {
 
   //Functions for sorting by names, first and last, by A-Z and Z-A; Mutates Users state.
   const sortFirstName = () => {
-    setUsers(
-      users.sort(
-        (a, b) => a.firstName.toUpperCase() > b.firstName.toUpperCase()
-      )
+    users.sort((a, b) =>
+      a.firstName.toUpperCase() > b.firstName.toUpperCase() ? 1 : -1
     );
     forceUpdate();
   };
 
   const sortFirstNameZA = () => {
-    setUsers(
-      users.sort(
-        (a, b) => a.firstName.toUpperCase() < b.firstName.toUpperCase()
-      )
+    users.sort((a, b) =>
+      a.firstName.toUpperCase() < b.firstName.toUpperCase() ? 1 : -1
     );
     forceUpdate();
   };
 
   const sortLastName = () => {
-    setUsers(
-      users.sort((a, b) => a.lastName.toUpperCase() > b.lastName.toUpperCase())
+    users.sort((a, b) =>
+      a.lastName.toUpperCase() > b.lastName.toUpperCase() ? 1 : -1
     );
     forceUpdate();
   };
   const sortLastNameZA = () => {
-    setUsers(
-      users.sort((a, b) => a.lastName.toUpperCase() < b.lastName.toUpperCase())
+    users.sort((a, b) =>
+      a.lastName.toUpperCase() < b.lastName.toUpperCase() ? 1 : -1
     );
     forceUpdate();
   };
