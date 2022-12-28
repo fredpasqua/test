@@ -11,7 +11,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [ignore, forceUpdate] = useReducer((x) => x + 1, 0);
   const [selectedDepartment, setSelectedDepartment] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   //Initialize Users on load
   useEffect(() => apiGET(), []);
@@ -21,7 +21,6 @@ function App() {
 
   //FETCH users from DummyJson.com
   const apiGET = () => {
-    setIsLoading(true);
     fetch(apiURL)
       .then((res) => res.json())
       .then((json) => setUsers(json.users));
