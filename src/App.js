@@ -62,26 +62,24 @@ function App() {
     setQuery("");
   };
 
+  //creates a list of Users prefiltered by selectedDepartment state
+  let preFilteredUsers = [];
+  selectedDepartment.length > 0
+    ? (preFilteredUsers = users.filter((user) => {
+        return user.company.department
+          .toLowerCase()
+          .includes(selectedDepartment.toLowerCase());
+      }))
+    : (preFilteredUsers = users);
 
-
-
-
-let preFilteredUsers = [];
-selectedDepartment.length > 0
-  ? (preFilteredUsers = users.filter((user) => {
-      return user.company.department
-        .toLowerCase()
-        .includes(selectedDepartment.toLowerCase());
-    }))
-  : (preFilteredUsers = users);
-//Search Bar Filter function
-let filteredUsers = preFilteredUsers.filter((user) => {
-  return (
-    user.firstName.toLowerCase().includes(query.toLowerCase()) ||
-    user.lastName.toLowerCase().includes(query.toLowerCase()) ||
-    user.company.title.toLowerCase().includes(query.toLowerCase())
-  );
-});
+  //Search Bar Filter function takes the preFiltered array created by drop down selection and searches by name or title
+  let filteredUsers = preFilteredUsers.filter((user) => {
+    return (
+      user.firstName.toLowerCase().includes(query.toLowerCase()) ||
+      user.lastName.toLowerCase().includes(query.toLowerCase()) ||
+      user.company.title.toLowerCase().includes(query.toLowerCase())
+    );
+  });
 
   //Drop Down Menu Calls this function to set state of SelecetedDepartments
   const updateSelectedDepartment = (e) => {

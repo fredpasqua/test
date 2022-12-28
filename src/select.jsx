@@ -5,7 +5,7 @@ export default function DropDown({ users, updateSelectedDepartment }) {
   const handleChange = (e) => {
     updateSelectedDepartment(e);
   };
-
+  let reset = { value: "", label: "All Departments" };
   let departments = users
     .map((user) => ({
       value: user.company.department,
@@ -16,6 +16,8 @@ export default function DropDown({ users, updateSelectedDepartment }) {
       (v, i, a) =>
         a.findIndex((v2) => JSON.stringify(v2) === JSON.stringify(v)) === i
     );
+  departments.push(reset);
+  departments.sort((a, b) => a - b);
 
   return (
     <div className="flex">
@@ -24,7 +26,7 @@ export default function DropDown({ users, updateSelectedDepartment }) {
         <Select
           className="departments"
           options={departments}
-          placeholder="All Departments"
+          value="null"
           onChange={(e) => handleChange(e.value)}
         />
       </div>
