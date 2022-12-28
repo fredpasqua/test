@@ -11,6 +11,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [ignore, forceUpdate] = useReducer((x) => x + 1, 0);
   const [selectedDepartment, setSelectedDepartment] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   //Initialize Users on load
   useEffect(() => apiGET(), []);
@@ -20,10 +21,11 @@ function App() {
 
   //FETCH users from DummyJson.com
   const apiGET = () => {
+    setIsLoading(true);
     fetch(apiURL)
       .then((res) => res.json())
       .then((json) => setUsers(json.users));
-    console.log(users);
+    setIsLoading(false);
   };
 
   //Functions for sorting by names, first and last, by A-Z and Z-A; Mutates Users state.
@@ -86,15 +88,7 @@ function App() {
     setSelectedDepartment(e);
   };
 
-  return filteredUsers.length === 0 ? (
-    <CircularProgress
-      variant="bubble-dotted"
-      color="#5320bd"
-      size="medium"
-      text=""
-      textColor="#581890"
-    />
-  ) : (
+  return (
     <>
       <div className="sortContainer">
         <div className="sortRight">
@@ -160,27 +154,36 @@ function App() {
           updateSelectedDepartment={updateSelectedDepartment}
         />
       </div>
-
-      <div>
-        <ul className="boxListItems">
-          {filteredUsers < 1 ? (
-            <h2>No known user with that name</h2>
-          ) : (
-            filteredUsers.map((user) => (
-              <li key={user.id}>
-                <UserBox
-                  name={user.firstName + " " + user.lastName}
-                  image={user.image}
-                  streetAddress={user.address}
-                  title={"placeholder"}
-                  email={user.email}
-                  user={user}
-                />
-              </li>
-            ))
-          )}
-        </ul>
-      </div>
+      {!isLoading ? (
+        <div>
+          <ul className="boxListItems">
+            {filteredUsers < 1 ? (
+              <h2>No known user with that name</h2>
+            ) : (
+              filteredUsers.map((user) => (
+                <li key={user.id}>
+                  <UserBox
+                    name={user.firstName + " " + user.lastName}
+                    image={user.image}
+                    streetAddress={user.address}
+                    title={"placeholder"}
+                    email={user.email}
+                    user={user}
+                  />
+                </li>
+              ))
+            )}
+          </ul>
+        </div>
+      ) : (
+        <CircularProgress
+          variant="bubble-dotted"
+          color="#5320bd"
+          size="medium"
+          text=""
+          textColor="#581890"
+        />
+      )}
     </>
   );
 }
