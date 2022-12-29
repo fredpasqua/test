@@ -85,106 +85,109 @@ function App() {
 
   return (
     <>
-      <div className="sortContainer">
-        <div className="sortRight">
-          <h1>Robots Directory</h1>
-          <p>
-            results match {filteredUsers.length} of {users.length} active robots
-          </p>
-          <a
-            href="https://fredpasqua.github.io/my-portfolio/#project"
-            className="portfolio-link"
-          >
-            RETURN TO PORTFOLIO
-          </a>
-        </div>
-        <div className="searchBar">
-          <input
-            onChange={(event) => setQuery(event.target.value)}
-            value={query}
-            placeholder="search name or title"
-          ></input>
-          <FontAwesomeIcon
-            onClick={() => clear()}
-            icon={faXmarkCircle}
-            style={{
-              color: "#3794ca",
-              backgroundColor: "white",
-              borderRadius: "50%",
-              height: "35px",
-              marginTop: "8px",
-            }}
+      <div className="view">
+        <div className="sortContainer">
+          <div className="sortRight">
+            <h1>Robots Directory</h1>
+            <p>
+              results match {filteredUsers.length} of {users.length} active
+              robots
+            </p>
+            <a
+              href="https://fredpasqua.github.io/my-portfolio/#project"
+              className="portfolio-link"
+            >
+              RETURN TO PORTFOLIO
+            </a>
+          </div>
+          <div className="searchBar">
+            <input
+              onChange={(event) => setQuery(event.target.value)}
+              value={query}
+              placeholder="search name or title"
+            ></input>
+            <FontAwesomeIcon
+              onClick={() => clear()}
+              icon={faXmarkCircle}
+              style={{
+                color: "#3794ca",
+                backgroundColor: "white",
+                borderRadius: "50%",
+                height: "35px",
+                marginTop: "8px",
+              }}
+            />
+          </div>{" "}
+          <div className="sortButtonsContainer">
+            <button
+              className="userButton"
+              onClick={() => {
+                sortFirstName();
+              }}
+            >
+              First A-Z
+            </button>
+            <button
+              className="userButton"
+              onClick={() => {
+                sortFirstNameZA();
+              }}
+            >
+              First Z-A
+            </button>
+            <button
+              className="userButton"
+              onClick={() => {
+                sortLastName();
+              }}
+            >
+              Last A-Z
+            </button>
+            <button
+              className="userButton"
+              onClick={() => {
+                sortLastNameZA();
+              }}
+            >
+              Last Z-A
+            </button>
+          </div>
+          <DropDown
+            users={users}
+            updateSelectedDepartment={updateSelectedDepartment}
           />
-        </div>{" "}
-        <div className="sortButtonsContainer">
-          <button
-            className="userButton"
-            onClick={() => {
-              sortFirstName();
-            }}
-          >
-            First A-Z
-          </button>
-          <button
-            className="userButton"
-            onClick={() => {
-              sortFirstNameZA();
-            }}
-          >
-            First Z-A
-          </button>
-          <button
-            className="userButton"
-            onClick={() => {
-              sortLastName();
-            }}
-          >
-            Last A-Z
-          </button>
-          <button
-            className="userButton"
-            onClick={() => {
-              sortLastNameZA();
-            }}
-          >
-            Last Z-A
-          </button>
         </div>
-        <DropDown
-          users={users}
-          updateSelectedDepartment={updateSelectedDepartment}
-        />
+        {!isLoading ? (
+          <div>
+            <ul className="boxListItems">
+              {filteredUsers < 1 ? (
+                <h2>No known user with that name</h2>
+              ) : (
+                filteredUsers.map((user) => (
+                  <li key={user.id}>
+                    <UserBox
+                      name={user.firstName + " " + user.lastName}
+                      image={user.image}
+                      streetAddress={user.address}
+                      title={"placeholder"}
+                      email={user.email}
+                      user={user}
+                    />
+                  </li>
+                ))
+              )}
+            </ul>
+          </div>
+        ) : (
+          <CircularProgress
+            variant="bubble-dotted"
+            color="#5320bd"
+            size="medium"
+            text=""
+            textColor="#581890"
+          />
+        )}
       </div>
-      {!isLoading ? (
-        <div>
-          <ul className="boxListItems">
-            {filteredUsers < 1 ? (
-              <h2>No known user with that name</h2>
-            ) : (
-              filteredUsers.map((user) => (
-                <li key={user.id}>
-                  <UserBox
-                    name={user.firstName + " " + user.lastName}
-                    image={user.image}
-                    streetAddress={user.address}
-                    title={"placeholder"}
-                    email={user.email}
-                    user={user}
-                  />
-                </li>
-              ))
-            )}
-          </ul>
-        </div>
-      ) : (
-        <CircularProgress
-          variant="bubble-dotted"
-          color="#5320bd"
-          size="medium"
-          text=""
-          textColor="#581890"
-        />
-      )}
     </>
   );
 }
