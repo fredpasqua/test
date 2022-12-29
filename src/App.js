@@ -106,17 +106,19 @@ function App() {
               value={query}
               placeholder="search name or title"
             ></input>
-            <FontAwesomeIcon
-              onClick={() => clear()}
-              icon={faXmarkCircle}
-              style={{
-                color: "#3794ca",
-                backgroundColor: "white",
-                borderRadius: "50%",
-                height: "35px",
-                marginTop: "8px",
-              }}
-            />
+            <div className="FontAwesome">
+              <FontAwesomeIcon
+                onClick={() => clear()}
+                icon={faXmarkCircle}
+                style={{
+                  color: "#3794ca",
+                  backgroundColor: "white",
+                  borderRadius: "50%",
+                  height: "35px",
+                  marginTop: "8px",
+                }}
+              />
+            </div>
           </div>{" "}
           <div className="sortButtonsContainer">
             <button
