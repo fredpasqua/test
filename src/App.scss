@@ -70,29 +70,10 @@ align-items: center;
  list-style-type: none;
 }
 .userImage {
-	-webkit-transition: .2s ease-in;
-
   height: 100px;
   width: 100px;
 }
-.userImage:hover {
-  
-  transform: scale(1.2);
 
-  margin-left: 0px;
-}
-.infoCard {
-  display: flex;
-  background-color: #d13468;
-  justify-content:center;
-  flex-wrap: wrap;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 10% 20%; 
-  width: 400px;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-}
 .infoCardUser h2 {
   color: white;
   text-align: center;
@@ -101,15 +82,16 @@ align-items: center;
 .infoCardUser {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   line-height: 1.2rem;
   background-color: $card-background-color;
+  height: 200px;
   border: $component-border;
   font-size: 12px;
-  margin: 5px;
+  margin: 2px;
   padding:20px;
-  border-radius: 20px; 
-  width: 275px;
+  width: 100vw;
   color: white;
   -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
