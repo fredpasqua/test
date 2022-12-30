@@ -199,18 +199,17 @@ color: rgb(19, 48, 141);
 }
 
 .modalImage {
-  min-height: 25%;
+  height: 225px;
   margin-left: auto;
   margin-right: auto;
-  min-width: 200px;
-  margin-top: -50px;
-  
+  width: 225px;
 }
 
 .modalContainer {
   display: flex;
-  flex-flow: wrap;
-  height: fit-content;   
+flex-wrap: wrap;
+  height: 75vh;  
+  width:70vw; 
   justify-content: space-around;
 }
 .modalContainer p {
