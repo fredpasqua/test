@@ -34,6 +34,7 @@ export default function UserBox({
         </div>
         <h2 className="userName">{name}</h2>
         <h3>Title: {user.company.title}</h3>
+        <h3>Department: {user.company.department}</h3>
       </div>
       <ReactModal
         isOpen={showModal}
